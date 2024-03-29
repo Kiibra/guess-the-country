@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(200, 186, 165);
+  font-size: solid;
+  display: center;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  color: rgb(30, 60, 50);
+}
