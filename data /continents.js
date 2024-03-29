@@ -181,7 +181,7 @@ const theAmericas = [
   },
 ]
 
-const theAfrican= [
+const african = [
   {
     flagURL: '../assets/images/flag2.jpg',
     options: [
@@ -291,16 +291,17 @@ const theAfrican= [
     correctAnswer: 'Liberia'
   },
   {
-    flagURL: '../assets/images/flag2.jpg',
+    flagURL: '',
     options: [
       'Burindi', 
       'Mauritius',
       'Chad', 
-    ]
+    ],
     correctAnswer: 'Mauritius'
   },
+
   {
-    flagURL: '../assets/images/flag2.jpg',
+    flagURL: '',
     options: [
       'Nigeria', 
       'Rwanda',
@@ -373,7 +374,7 @@ const theAfrican= [
   },
 ]
 
-const theEurasia = [
+const eurasia = [
   {
     flagURL: '../assets/images/flag2.jpg',
     options: [
@@ -602,10 +603,26 @@ const theEurasia = [
 ]
 
 
+function getRandomTheAmericas () {
+  return theAmericas[Math.floor(Math.random() * theAmericas.length)]
+}
+function getRandomAfrican (){
+  return african [Math.floor(Math.random() * african.length)]
+}
+function getRandomEurasia () {
+  return eurasia [Math.floor(Math.random() * eurasia.length)]
+}
 
 
-
-
+export {
+  getRandomTheAmericas,
+}
+export {
+  getRandomAfrican,
+}
+export {
+getRandomEurasia
+}
 
 
 
