@@ -4,43 +4,49 @@ import { getRandomAfrican } from "../data /continents.js";
 import { getRandomEurasia } from "../data /continents.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-
-const theAmericas = []
-const african = []
-const eurasia = []
-
-
+let theAmericas = []
+let african = []
+let eurasia = []
+let flagURL = []
+let options = []
 
 /*------------------------ Cached Element References ------------------------*/
 
 const theAmericasButton =document.querySelector('#the-americas')
 const africanButton = document.querySelector('#african-button')
 const eurasianButton = document.querySelector('#eurasia-button')
-const flagContainer = document.querySelector('#flag-container')
+const continentsElement = document.querySelector('.continents')
 
 const globeButton = document.querySelector('#globe-button')
 
 /*----------------------------- Event Listeners -----------------------------*/
-theAmericasButton.addEventListener('click', presentNewFlag)
-africanButton.addEventListener('cliick', presentNewFlag)
-eurasianButton.addEventListener('click', presentNewFlag)
+// theAmericasButton.addEventListener('click', presentNewFlag)
+// africanButton.addEventListener('cliick', presentNewFlag)
+// eurasianButton.addEventListener('click', presentNewFlag)
 
-flagContainer.addEventListener('click', presentNewFlag)
+continentsElement.addEventListener('click', presentNewFlag)
 
-globeButton.addEventListener('click')
+// globeButton.addEventListener('click', globeImage)
 /*-------------------------------- Functions --------------------------------*/
-init (
-  presentNewFlag(),
-  newflag(),
-)
+init ()
+  function init () {
+    theAmericas = []
+    african = []
+    eurasia = []
+    flagURL = []
+    
+}
 
 function presentNewFlag (){
-  const newflag = getRandomTheAmericas()
-  const addFlag = getRandomAfrican ()
-  const asainFlag = getRandomEurasia()
-  theAmericas.push(newflag)
-  african.push(addFlag)
-  eurasia.push(asainFlag)
-  render()
+  flagsURL.forEach ((element, idx) => {
+    if(continentsElement === theAmericas){
+      getRandomTheAmericas().correctAnswer
+    }else if (continentsElement === african){
+      getRandomAfrican().correctAnswer
+    }else if (continentsElement === eurasia){
+      getRandomEurasia().correctAnswer
+    }
+})
 }
+console.log(flagsURL)
 
