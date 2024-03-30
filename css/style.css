@@ -1,29 +1,71 @@
 body {
-  background-color: rgb(196, 192, 244);
-  font-size: solid;
+  background-color: #657579;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%23041513' fill-opacity='0.4'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* background-color: rgb(46, 114, 105); */
   display: center;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: rgb(30, 60, 50);
-}
-
-#next-button {
-  display: flex;
-  font-size: 22px;
-  justify-content: center;
-  align-items: center
+  color: rgba(237, 233, 240, 0.927);
 
 }
 
-button {
-  background-color: rgb(202, 194, 170);
-  border: none;
+h1 {
+  font-family: "Rakkas", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 40px;
+
+}
+p {
+  text-align: center;
+  border-radius: 0px;
   font-size: 28px;
+  display: flex;
+  justify-content:center;
+  font-size: 20px;
+  color: rgb(237, 236, 237);
+}
+nav {
+  display: flex;
+  width: 100%;
+  border-radius: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #657579;
+  margin-top: 0px;
+  border-top:0dvh;
+
+}
+button {
+  background-color: rgb(227, 227, 200);
+  border: 0px;
+  font-size: 22px;
   cursor: pointer;
-  border-radius: 13px;
+  border-radius: 8px;
   margin: 10px;
-  padding: 8px 18px;
-  align-items: flex-end;
+  padding: 8px 10px;
+  align-items: center;
+  justify-content: space-around;
 }
 
+
+
+
+.back-button {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+
+}
+
+
+
+
+
+
+
+/* fonts: Google
+https://fonts.google.com/?preview.text=guess&query=shad */

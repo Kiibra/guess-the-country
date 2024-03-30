@@ -4,12 +4,9 @@ import { getRandomAfrican } from "../data /continents.js";
 import { getRandomEurasia } from "../data /continents.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let theAmericas = []
-let african = []
-let eurasia = []
-let flagURL = []
-let options = []
 
+let currentCategory = theAmericas, african, eurasia
+let currentQuestionIdx = []
 /*------------------------ Cached Element References ------------------------*/
 
 const theAmericasButton =document.querySelector('#the-americas')
@@ -18,35 +15,31 @@ const eurasianButton = document.querySelector('#eurasia-button')
 const continentsElement = document.querySelector('.continents')
 
 const globeButton = document.querySelector('#globe-button')
+const backbutton= document.getElementById('.back-button')
 
 /*----------------------------- Event Listeners -----------------------------*/
-// theAmericasButton.addEventListener('click', presentNewFlag)
-// africanButton.addEventListener('cliick', presentNewFlag)
-// eurasianButton.addEventListener('click', presentNewFlag)
+theAmericasButton.addEventListener('click', presentNewFlag)
+africanButton.addEventListener('cliick', presentNewFlag)
+eurasianButton.addEventListener('click', presentNewFlag)
 
-continentsElement.addEventListener('click', presentNewFlag)
+continentsElement.addEventListener('click', appendFlag)
+
 
 // globeButton.addEventListener('click', globeImage)
 /*-------------------------------- Functions --------------------------------*/
 init ()
   function init () {
-    theAmericas = []
-    african = []
-    eurasia = []
+    currentCategory = []
     flagURL = []
+    options = {}
     
 }
 
-function presentNewFlag (){
-  flagsURL.forEach ((element, idx) => {
-    if(continentsElement === theAmericas){
-      getRandomTheAmericas().correctAnswer
-    }else if (continentsElement === african){
-      getRandomAfrican().correctAnswer
-    }else if (continentsElement === eurasia){
-      getRandomEurasia().correctAnswer
-    }
-})
-}
-console.log(flagsURL)
+function appendFlag (){
+  currentCategory.array.forEach(element => {
+    if (continentsElement === theAmericas)
+    currentCategory[currentQuestionIdx].flagURL 
 
+  })
+  
+}
