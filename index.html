@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./js/app.js" type="module"></script>
-  <script src="./data /continents.js" type="module"></script>
+  <script defer src="./data /continents.js" type="module"></script>
   <title>Name the Country of the Flag</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,21 +13,25 @@
 </head>
 <body>
   <nav>
-    <h1>Guess the Country of the Flag </h1>
+    <h2>Guess the Country of the Flag </h2>
   </nav>
-  <p>Choose a Continent to Get Started</p>
-  <section class="continents">
+  <h1>Choose a Continent to Get Started!</h1> 
+  <div class="continents">
     <button id="americas-button">The Americas</button>
     <button id="african-button">African Countries</button>
     <button id="eurasian-button">Eurasian Countries</button>
-  </section>
-  <button id="globe-button"></button>
- 
-  <!-- <div id="flag-container"
-    <div class="flags">
-    </div> -->
-    <button class="back-button">Back</button>
   </div>
+  <img class="flag"> 
+  <div class="answer-options">
+    <button id="button1"></button>
+    <button id="button2"></button>
+    <button id="button3"></button>  
+</div>
+<!-- <button id="globe-button"></button>
+<button class="back-button">Back</button> -->
+
+
+
 
 </body>
 </html>
