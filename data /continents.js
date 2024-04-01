@@ -607,13 +607,15 @@ function getRandomEurasia () {
 
 export {
   getRandomAmericas,
-}
-export {
   getRandomAfrican,
+  getRandomEurasia
 }
-export {
-getRandomEurasia
-}
+// export {
+//   getRandomAfrican,
+// }
+// export {
+// getRandomEurasia
+// }
 
 
 

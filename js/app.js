@@ -3,12 +3,13 @@ import { getRandomAmericas } from "../data /continents.js";
 import { getRandomAfrican } from "../data /continents.js";
 import { getRandomEurasia } from "../data /continents.js";
 
+import * as shinegWaving from "./audio.js"
 /*---------------------------- Variables (state) ----------------------------*/
-let currentCategory = ''
-let currentQuestionIdx = []
+let currentCategory = []
+let currentQuestionIdx = {}
 let score
-const correctAnswer = ''
-let options = ''
+let correctAnswer = ''
+let options = []
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -16,50 +17,55 @@ const theAmericasButton =document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
 const eurasianButton = document.querySelector('#eurasian-button')
 
-// const getcontinents =document.querySelectorAll('#continents')
-
-const imageFlag = document.querySelector('.flag')
 
 const buttonElement1 = document.querySelector('#button1')
 const buttonElement2= document.querySelector('#button2')
 const buttonElement3 = document.querySelector('#button3')
 
-// console.log(buttonEl1)
+const imageFlag = document.querySelector('.flag')
 
 
+const darkModeBtn = document.querySelector('#dark-mode-light')
+const body = document.querySelector('body')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-// getcontinents.forEach(function(button){
-//   button.addEventListner('click', init )
-// } )
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasia)
 
-console.log(imageFlag)
+buttonElement1.addEventListener('click', selectButton1)
+buttonElement2.addEventListener('click', selectButton2)
+buttonElement3.addEventListener('click', selectButton3)
+
+darkModeBtn.addEventListener('click', toggleDarkMode)
 
 
-buttonElement1.addEventListener('click', answerOptions)
-buttonElement2.addEventListener('click', answerOptions)
-buttonElement3.addEventListener('click', answerOptions)
-
+// answerOptionsEl.addEventListener('click', selectButtons)
 /*-------------------------------- Functions --------------------------------*/
+function toggleDarkMode(){
+  body.className = body.className === "dark" ? "" : "dark"
+  if (body.className === "dark") {
+    // shinegWaving.playWavingFlag()
+  } else {
+    // shinegWaving.playShineBright()
+  }
+}
+
+
 init ()
 
   function init () {
-    currentCategory = 'theAmericas, african, eurasia'
-    options = [0, 1, 2]
-    currentQuestionIdx = []
-    score = 0
-
-
+    currentCategory = ['theAmericas, african, eurasia']
+    options = {}
+    currentQuestionIdx = {}
+    correctAnswer = ''
+    score = currentQuestionIdx
+    
   render()
-}
 
-// need to push new randomized pair of countries of theAmericas 
-// use style.display = '' and style.display = 'none' to show i want to see
+}
 
 
 function selectTheAmericas (){
@@ -82,26 +88,36 @@ function selectEurasia (){
 }
 
 
+function selectButton1 (){
+
+  checkCorrectAnswer()
+}
+
+function selectButton2 (){
+  
+  checkCorrectAnswer()
+}
+
+function selectButton3 (){
+  
+  checkCorrectAnswer()
+}
+
 
 function appendFlag (){
     imageFlag.src = currentCategory.flagURL
     imageFlag.style.height = '200px'
     imageFlag.style.width = '300px'
-    // if (currentCategory === 'theAmericas') {
-    //   currentCategory[currentQuestionIdx].flagURL
-    // }else if(currentCategory === 'african') {
-    //   return currentCategory[currentQuestionIdx].flagURL
-    // }else if (currentCategory === 'eurasia'){
-    //   return currentCategory[currentQuestionIdx].flagURL
-    // }
-  console.log(currentCategory)
 
 }
+// console.log(appendFlag)
 
 
 function handleClick (evt) {
 
 appendFlag ()
+answerOptions()
+checkCorrectAnswer()
 }
 
 
@@ -109,29 +125,37 @@ function answerOptions (){
     buttonElement1.textContent = currentCategory.options[0]
     buttonElement2.textContent = currentCategory.options[1]
     buttonElement3.textContent = currentCategory.options[2]
-  checkCorrectAnswer()
 }
 
-// console.log(buttonEl1)
-// pass all three answer options to either button1 button2 and button3
 
 
-function checkCorrectAnswer (){
-  if (currentQuestionIdx.answerOptions === correctAnswer) {
-    correctAnswer.textContent.style.color = "correct"
-  }else{
-    return correctAnswer
-}
+function checkCorrectAnswer (answerChoice){
+  answerChoice = currentCategory.options
+  if (answerChoice === correctAnswer){
+    "correct"
+  }else if (answerChoice !== correctAnswer){
+    "incorrect"
+  }
+  }
 // check if users answeroption is the same as the correct answer stated
-
-}
 
 
 function render () {
+
+  checkCorrectAnswer()
 }
 
 
 
+
+
+// use style.display = '' and style.display = 'none' to show display
+// if (currentCategory){
+//   appendFlag.style.display = ''
+
+// }else{
+
+// }
 
 
 
