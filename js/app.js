@@ -10,7 +10,6 @@ let currentQuestionIdx = {}
 let score
 let correctAnswer = ''
 let options = []
-let answerChoice
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -30,6 +29,7 @@ const darkModeBtn = document.querySelector('#dark-mode-light')
 const body = document.querySelector('body')
 
 
+// document.getElementById('back-button').addEventListener('click', ()=>)
 /*----------------------------- Event Listeners -----------------------------*/
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
@@ -41,6 +41,8 @@ buttonElement2.addEventListener('click', selectButton2)
 buttonElement3.addEventListener('click', selectButton3)
 
 darkModeBtn.addEventListener('click', toggleDarkMode)
+
+// backBtnEl.addEventListener('click', returnBack)
 
 
 // answerOptionsEl.addEventListener('click', selectButtons)
@@ -69,6 +71,19 @@ init ()
 }
 
 
+function returnBack(){
+  // if a category has been chosen,
+  // style.display= '' the button
+  // if no Category has been chosen, then style.display="none"
+  history.back()
+  if(currentCategory !== null){
+  backBtnEl.style.display = ''
+  }else{
+    backBtnEl.style.display = 'none'
+  }
+}
+
+
 function selectTheAmericas (){
   currentCategory = getRandomAmericas()
 
@@ -90,18 +105,21 @@ function selectEurasia (){
 
 
 function selectButton1 (){
-
-  checkCorrectAnswer()
+  let buttonText = buttonElement1.textContent
+  
+  checkCorrectAnswer(buttonText)
 }
 
 function selectButton2 (){
+  let buttonText = buttonElement2.textContent
   
-  checkCorrectAnswer()
+  checkCorrectAnswer(buttonText)
 }
 
 function selectButton3 (){
+let buttonText = buttonElement3.textContent
   
-  checkCorrectAnswer()
+  checkCorrectAnswer(buttonText)
 }
 
 
@@ -118,7 +136,7 @@ function handleClick (evt) {
 
 appendFlag ()
 answerOptions()
-checkCorrectAnswer()
+// checkCorrectAnswer()
 }
 
 
@@ -130,14 +148,17 @@ function answerOptions (){
 
 
 
-function checkCorrectAnswer (){
-  // let answerChoice = currentCategory[currentQuestionIdx].
-  // if (answerChoice === correctAnswer) {
-  //   console.log("correct")
-  // } else if(answerChoice !== correctAnswer) {
-  //   console.log("incorrect")
-  // }
-}
+function checkCorrectAnswer (buttonText){
+  console.log(currentCategory)
+  correctAnswer = currentCategory.correctAnswer
+  let answerChoice = buttonText
+  // console.log(answerChoice,correctAnswer)
+  if (answerChoice === correctAnswer) {
+    console.log("correct")
+  }else if(answerChoice !== correctAnswer)
+    console.log("incorrect")
+  }
+
 
   // console.log(answerChoice)
 // check if users answeroption is the same as the correct answer stated
@@ -150,7 +171,7 @@ function checkCorrectAnswer (){
 
 function render () {
 
-  checkCorrectAnswer()
+  // checkCorrectAnswer()
 }
 
 
