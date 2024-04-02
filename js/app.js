@@ -28,6 +28,7 @@ const imageFlag = document.querySelector('.flag')
 const darkModeBtn = document.querySelector('#dark-mode-light')
 const body = document.querySelector('body')
 
+const answerOptionsEl = document.querySelector('.answer-options')
 
 // document.getElementById('back-button').addEventListener('click', ()=>)
 /*----------------------------- Event Listeners -----------------------------*/
@@ -36,16 +37,16 @@ theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasia)
 
-buttonElement1.addEventListener('click', selectButton1)
-buttonElement2.addEventListener('click', selectButton2)
-buttonElement3.addEventListener('click', selectButton3)
+// buttonElement1.addEventListener('click', selectButton1)
+// buttonElement2.addEventListener('click', selectButton2)
+// buttonElement3.addEventListener('click', selectButton3)
 
 darkModeBtn.addEventListener('click', toggleDarkMode)
 
 // backBtnEl.addEventListener('click', returnBack)
 
 
-// answerOptionsEl.addEventListener('click', selectButtons)
+answerOptionsEl.addEventListener('click', selectButtons)
 /*-------------------------------- Functions --------------------------------*/
 function toggleDarkMode(){
   body.className = body.className === "dark" ? "" : "dark"
@@ -104,20 +105,26 @@ function selectEurasia (){
 }
 
 
-function selectButton1 (){
-  let buttonText = buttonElement1.textContent
+// function selectButton1 (){
+//   let buttonText = buttonElement1.textContent
   
-  checkCorrectAnswer(buttonText)
-}
+//   checkCorrectAnswer(buttonText)
+// }
 
-function selectButton2 (){
-  let buttonText = buttonElement2.textContent
+// function selectButton2 (){
+//   let buttonText = buttonElement2.textContent
   
-  checkCorrectAnswer(buttonText)
-}
+//   checkCorrectAnswer(buttonText)
+// }
 
-function selectButton3 (){
-let buttonText = buttonElement3.textContent
+// function selectButton3 (){
+// let buttonText = buttonElement3.textContent
+  
+//   checkCorrectAnswer(buttonText)
+// }
+
+function selectButtons(evt){
+  let buttonText = evt.target.textContent
   
   checkCorrectAnswer(buttonText)
 }
