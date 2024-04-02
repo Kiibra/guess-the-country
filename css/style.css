@@ -9,9 +9,8 @@ html {
 
 
 body {
-  background-color: #71afbd;
+  background-color: #8ac9d7;
   --body-bg: #d3d5f2;
-  --header-bg: #007bbe;
   --inverted-btn-text-color: #a67c7c;
   --light-dark-btn-bg: #bcbfe3;
   --waving-flag-btn-content: "Dark Mode";
@@ -33,13 +32,15 @@ body {
 
 body.dark {
   --body-bg: #1b1206;
-  /* --header-bg: #164262; */
+  background-image: url("../assets/flags.png");
   --inverted-btn-text-color: #763a3a;
   --light-dark-btn-bg: linear-gradient(to right top, #3e4153, #595b6b, #6f7181,
     #868898, #1f2a5e, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
   --shin-bright-botton: "Light-Mode";
   h1 {
-    color: #bdd8df;
+    background: #deedee;
+    color: #5b2423;
+    font-size: 18px;
   }
   background-color: var(--body-bg);
 }
@@ -74,11 +75,20 @@ h2 {
   color: rgb(4, 41, 29);
 }
 
-h1 {
+/* h1 {
   font-size: 18px;
-  color: rgb(34, 26, 28);
-}
+  color: rgb(127, 101, 108);
+} */
 
+#back-button {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #99c8e2;
+
+}
 nav {
   display: flex;
   width: 100%;
@@ -105,15 +115,8 @@ button {
   justify-content: space-around;
 }
 
-
-
-
-.back-button {
-  display: flex;
-  font-size: 18px;
-  justify-content: center;
-  align-items: flex-end;
-  cursor: pointer;
+.continents{
+background: #dadae887;
 
 }
 
@@ -123,5 +126,11 @@ button {
 
 
 
+
+
+
 /* fonts: Google
 https://fonts.google.com/?preview.text=guess&query=shad */
+
+/* Resource: mdn- for background image
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/background-image */

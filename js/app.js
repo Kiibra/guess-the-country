@@ -10,6 +10,7 @@ let currentQuestionIdx = {}
 let score
 let correctAnswer = ''
 let options = []
+let answerChoice
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -47,9 +48,9 @@ darkModeBtn.addEventListener('click', toggleDarkMode)
 function toggleDarkMode(){
   body.className = body.className === "dark" ? "" : "dark"
   if (body.className === "dark") {
-    // shinegWaving.playWavingFlag()
+    shinegWaving.playWavingFlag()
   } else {
-    // shinegWaving.playShineBright()
+    shinegWaving.playShineBright()
   }
 }
 
@@ -58,10 +59,10 @@ init ()
 
   function init () {
     currentCategory = ['theAmericas, african, eurasia']
-    options = {}
+    options = ''
     currentQuestionIdx = {}
     correctAnswer = ''
-    score = currentQuestionIdx
+    score = 0
     
   render()
 
@@ -129,15 +130,22 @@ function answerOptions (){
 
 
 
-function checkCorrectAnswer (answerChoice){
-  answerChoice = currentCategory.options
-  if (answerChoice === correctAnswer){
-    "correct"
-  }else if (answerChoice !== correctAnswer){
-    "incorrect"
-  }
-  }
+function checkCorrectAnswer (){
+  // let answerChoice = currentCategory[currentQuestionIdx].
+  // if (answerChoice === correctAnswer) {
+  //   console.log("correct")
+  // } else if(answerChoice !== correctAnswer) {
+  //   console.log("incorrect")
+  // }
+}
+
+  // console.log(answerChoice)
 // check if users answeroption is the same as the correct answer stated
+
+
+
+
+
 
 
 function render () {
@@ -156,8 +164,6 @@ function render () {
 // }else{
 
 // }
-
-
 
 
 
