@@ -16,16 +16,12 @@ body {
   --waving-flag-btn-content: "Dark Mode";
   align-items: center;
   background-color: var(--body-bg);
-
   display: flex;
-
   flex-direction: column; 
-  margin: 0;
   justify-content: center;
-  align-items: center;
   text-align: center;
   color: rgba(103, 63, 123, 0.927);
-  margin: 0px;
+  /* margin: 0px; */
   border-radius: 8px;
 }
 
@@ -33,6 +29,8 @@ body {
 body.dark {
   --body-bg: #1b1206;
   background-image: url("../assets/flags.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   --inverted-btn-text-color: #763a3a;
   --light-dark-btn-bg: linear-gradient(to right top, #3e4153, #595b6b, #6f7181,
     #868898, #1f2a5e, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
@@ -111,8 +109,10 @@ button {
   margin: 10px;
   margin-top: 40px;
   padding: 8px 10px;
-  align-items: center;
-  justify-content: space-around;
+  align-items: baseline;
+  justify-content: center;
+  /* display: flex; */
+
 }
 
 /* .continents{

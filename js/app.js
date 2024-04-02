@@ -136,7 +136,6 @@ function appendFlag (){
     imageFlag.style.width = '300px'
 
 }
-// console.log(appendFlag)
 
 
 function handleClick (evt) {

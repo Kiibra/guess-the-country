@@ -155,7 +155,7 @@ const americas = [
   {
     flagURL: '../assets/americas/bahamas_flag.png',
     options: [
-      'Aruab', 
+      'Aruba', 
       'Bahamas',
       'Guatemala', 
     ],
