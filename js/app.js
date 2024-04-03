@@ -7,7 +7,7 @@ import * as shinegWaving from "./audio.js"
 /*---------------------------- Variables (state) ----------------------------*/
 let currentCategory = []
 let currentQuestionIdx = {}
-let score
+let score = 0
 let correctAnswer = ''
 let options = []
 
@@ -33,6 +33,8 @@ const answerOptionsEl = document.querySelector('.answer-options')
 document.getElementById('back-button').addEventListener('click', ()=> {
   history.back();
 });
+
+// let scoreEl = document.getElementById('scores')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -76,9 +78,9 @@ init ()
 
 
 // function returnBack(){
-//   // if a category has been chosen,
-//   // style.display= '' the button
-//   // if no Category has been chosen, then style.display="none"
+  // if a category has been chosen,
+  // style.display= '' the button
+  // if no Category has been chosen, then style.display="none"
 //   history.back()
 //   if(currentCategory !== null){
 //   backBtnEl.style.display = ''
@@ -86,7 +88,7 @@ init ()
 //     backBtnEl.style.display = 'none'
 //   }
 // }
-// returnBack()
+
 
 function selectTheAmericas (){
   currentCategory = getRandomAmericas()
@@ -107,26 +109,9 @@ function selectEurasia (){
   answerOptions()
 }
 
-
-// function selectButton1 (){
-//   let buttonText = buttonElement1.textContent
-//   checkCorrectAnswer(buttonText)
-// }
-
-// function selectButton2 (){
-//   let buttonText = buttonElement2.textContent
-//   checkCorrectAnswer(buttonText)
-// }
-
-// function selectButton3 (){
-// let buttonText = buttonElement3.textContent
-//   checkCorrectAnswer(buttonText)
-// }
-
 function selectButtons(evt){
-  let buttonText = evt.target.textContent
-
-  checkCorrectAnswer(buttonText)
+  let button = evt.target
+  checkCorrectAnswer(button)
 }
 
 
@@ -153,19 +138,20 @@ function answerOptions (){
 
 
 
-function checkCorrectAnswer (buttonText){
+function checkCorrectAnswer (button){
   correctAnswer = currentCategory.correctAnswer
-  let answerChoice = buttonText
+  let answerChoice = button.textContent
+  console.log(answerChoice)
   if (answerChoice === correctAnswer) {
-      answerChoice = "correct"
-      // answerOptionsEl.style.color = "green"
+      console.log ("correct")
+      button.style.background = "green"
+      button.style.color = 'white'
   }else if(answerChoice !== correctAnswer)
     console.log("incorrect")
-    // buttonElement1.style.backgroundColor = 'red'
-  }
+      button.style.background = 'red'
+      button.style.color = 'white'
+}
 
-  // console.log(answerChoice)
-// check if users answeroption is the same as the correct answer stated
 
 
 
