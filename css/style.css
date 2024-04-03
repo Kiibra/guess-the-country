@@ -21,7 +21,7 @@ body {
   justify-content: center;
   text-align: center;
   color: rgba(103, 63, 123, 0.927);
-  /* margin: 0px; */
+  margin: 0px;
   border-radius: 8px;
 }
 
@@ -115,10 +115,6 @@ button {
 
 }
 
-/* .continents{
-background: #dadae887;
-
-} */
 
 
 

@@ -25,12 +25,15 @@ const buttonElement3 = document.querySelector('#button3')
 const imageFlag = document.querySelector('.flag')
 
 
-const darkModeBtn = document.querySelector('#dark-mode-light')
+const flagModeBtn = document.querySelector('#dark-mode-light')
 const body = document.querySelector('body')
 
 const answerOptionsEl = document.querySelector('.answer-options')
 
-// document.getElementById('back-button').addEventListener('click', ()=>)
+document.getElementById('back-button').addEventListener('click', ()=> {
+  history.back();
+});
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
@@ -41,7 +44,7 @@ eurasianButton.addEventListener('click', selectEurasia)
 // buttonElement2.addEventListener('click', selectButton2)
 // buttonElement3.addEventListener('click', selectButton3)
 
-darkModeBtn.addEventListener('click', toggleDarkMode)
+flagModeBtn.addEventListener('click', toggleDarkMode)
 
 // backBtnEl.addEventListener('click', returnBack)
 
@@ -72,18 +75,18 @@ init ()
 }
 
 
-function returnBack(){
-  // if a category has been chosen,
-  // style.display= '' the button
-  // if no Category has been chosen, then style.display="none"
-  history.back()
-  if(currentCategory !== null){
-  backBtnEl.style.display = ''
-  }else{
-    backBtnEl.style.display = 'none'
-  }
-}
-
+// function returnBack(){
+//   // if a category has been chosen,
+//   // style.display= '' the button
+//   // if no Category has been chosen, then style.display="none"
+//   history.back()
+//   if(currentCategory !== null){
+//   backBtnEl.style.display = ''
+//   }else{
+//     backBtnEl.style.display = 'none'
+//   }
+// }
+// returnBack()
 
 function selectTheAmericas (){
   currentCategory = getRandomAmericas()
@@ -107,25 +110,22 @@ function selectEurasia (){
 
 // function selectButton1 (){
 //   let buttonText = buttonElement1.textContent
-  
 //   checkCorrectAnswer(buttonText)
 // }
 
 // function selectButton2 (){
 //   let buttonText = buttonElement2.textContent
-  
 //   checkCorrectAnswer(buttonText)
 // }
 
 // function selectButton3 (){
 // let buttonText = buttonElement3.textContent
-  
 //   checkCorrectAnswer(buttonText)
 // }
 
 function selectButtons(evt){
   let buttonText = evt.target.textContent
-  
+
   checkCorrectAnswer(buttonText)
 }
 
@@ -142,7 +142,6 @@ function handleClick (evt) {
 
 appendFlag ()
 answerOptions()
-// checkCorrectAnswer()
 }
 
 
@@ -155,21 +154,18 @@ function answerOptions (){
 
 
 function checkCorrectAnswer (buttonText){
-  console.log(currentCategory)
   correctAnswer = currentCategory.correctAnswer
   let answerChoice = buttonText
-  // console.log(answerChoice,correctAnswer)
   if (answerChoice === correctAnswer) {
-    console.log("correct")
+      answerChoice = "correct"
+      // answerOptionsEl.style.color = "green"
   }else if(answerChoice !== correctAnswer)
     console.log("incorrect")
+    // buttonElement1.style.backgroundColor = 'red'
   }
-
 
   // console.log(answerChoice)
 // check if users answeroption is the same as the correct answer stated
-
-
 
 
 
