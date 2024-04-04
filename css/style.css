@@ -33,14 +33,10 @@ body.dark {
   --inverted-btn-text-color: #763a3a;
   --light-dark-btn-bg: linear-gradient(to right top, #3e4153, #595b6b, #6f7181,
     #868898, #1f2a5e, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
-  --shin-bright-botton: "Light-Mode";
-  h1 {
-    background: #e0e7e8;
-    color: #5b2423;
-    font-size: 18px;
-  }
+  --shin-bright-button: "Light-Mode";
   background-color: var(--body-bg);
 }
+
 #dark-mode-light {
   justify-content: center;
   display: flex;
@@ -50,6 +46,12 @@ body.dark {
   background-color: #bdd8df;
 }
 
+h1 {
+  background: #e7e4e1;
+  color: #2f2828;
+  font-size: 18px;
+  border-radius: 2px;
+}
 
 #dark-mode-light {
   background-color: var(--inverted-btn-text-color);
@@ -77,6 +79,7 @@ h3 {
   display: flex;
   justify-content: left;
   align-items: center;
+  margin-left: 10px;
 }
 
 .green {
@@ -88,11 +91,13 @@ background-color: rgb(236, 23, 23);
 
 #back-button {
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
   justify-content: left;
   align-items: center;
   cursor: pointer;
   background-color: #b5bdc2;
+  margin-top: 60px;
+  margin-left: 10px;
   
 }
 
@@ -117,6 +122,7 @@ button {
   border-radius: 8px;
   margin: 10px;
   margin-top: 40px;
+  margin-bottom: 35px;
   padding: 8px 10px;
   align-items: center;
   justify-content: center;
@@ -127,7 +133,7 @@ button {
   align-items: end;
   justify-content: flex-start;
   flex-flow: row;
-  margin-left: 10px;
+  margin-left:10px;
 }
 
 .score{
@@ -136,16 +142,10 @@ button {
 }
 
 .board-container {
-  background-color: #c0c2d2;
+  background-color: #d3d6ef93;
+  width: 860px;
+  height: 580px;
 }
 
 
 
-
-
-
-/* fonts: Google
-https://fonts.google.com/?preview.text=guess&query=shad */
-
-/* Resource: mdn- for background image
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/background-image */

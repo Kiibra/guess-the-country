@@ -42,6 +42,7 @@ theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasia)
 
+
 // buttonElement1.addEventListener('click', selectButton1)
 // buttonElement2.addEventListener('click', selectButton2)
 // buttonElement3.addEventListener('click', selectButton3)
@@ -118,15 +119,13 @@ function selectButtons(evt){
   let button = evt.target
   
   checkCorrectAnswer(button)
-  // trackScore()
 }
 
 
 function appendFlag (){
     imageFlag.src = currentCategory.flagURL
-    imageFlag.style.height = '200px'
-    imageFlag.style.width = '300px'
-
+    imageFlag.style.height = '300px'
+    imageFlag.style.width = '500px'
 }
 
 
@@ -153,12 +152,9 @@ function checkCorrectAnswer (button){
     if(answerChoice === correctAnswer) {
       console.log ("correct")
       button.classList.add('green')
-      // button.style.color = 'white'
     }else if(answerChoice !== correctAnswer){
       console.log("incorrect")
       button.classList.add('red')
-      // clearInterval(interval)
-      // button.style.color = 'white'
     }
     trackScore(button)
 }
