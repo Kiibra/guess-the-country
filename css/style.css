@@ -35,7 +35,7 @@ body.dark {
     #868898, #1f2a5e, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
   --shin-bright-botton: "Light-Mode";
   h1 {
-    background: #deedee;
+    background: #e0e7e8;
     color: #5b2423;
     font-size: 18px;
   }
@@ -102,7 +102,7 @@ nav {
   border-radius: none;
   justify-content: center;
   align-items: center;
-  background-color: #acb5ed;
+  background-color: #bcc3ed;
   margin-top: 0px;
   border-top:0dvh;
 
@@ -118,10 +118,8 @@ button {
   margin: 10px;
   margin-top: 40px;
   padding: 8px 10px;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  /* display: flex; */
-
 }
 
 #track-score {
@@ -137,7 +135,9 @@ button {
   
 }
 
-
+.board-container {
+  background-color: #c0c2d2;
+}
 
 
 

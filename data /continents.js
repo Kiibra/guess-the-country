@@ -94,7 +94,7 @@ const americas = [
     options: [
       'USA', 
       'Dominican Republic',
-      'CUba', 
+      'Cuba', 
     ],
     correctAnswer: 'Dominican Republic'
   },
@@ -103,7 +103,7 @@ const americas = [
     options: [
       'Argentina', 
       'Uruguay',
-      'CUba', 
+      'Cuba', 
     ],
     correctAnswer: 'Uruguay'
   },
@@ -121,7 +121,7 @@ const americas = [
     options: [
       'USA', 
       'Panama',
-      'CUba', 
+      'Cuba', 
     ],
     correctAnswer: 'USA'
   },
