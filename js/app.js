@@ -52,9 +52,7 @@ function toggleDarkMode(){
   body.className = body.className === "dark" ? "" : "dark"
   if (body.className === "dark") {
     shineWaving.playWavingFlag()
-  } else {
-    shineWaving.playShineBright()
-  }
+  } 
 }
 
 
@@ -62,7 +60,12 @@ init ()
 
 function init () {
   scoreDisplayEl.style.display = 'none'
-    options = ''
+  buttonElement1.style.display = 'none'
+  buttonElement2.style.display = 'none'
+  buttonElement3.style.display = 'none'
+  theAmericasButton.style.display = ''
+  eurasianButton.style.display = ''
+  options = ''
     currentQuestionIdx = 0
     correctAnswer = ''
     score = 0
@@ -161,7 +164,12 @@ function trackScore (button){
 
 
 function render () {
-
+  buttonElement1.style.display = ''
+  buttonElement2.style.display = ''
+  buttonElement3.style.display = ''
+  theAmericasButton.style.display = 'none'
+  africanButton.style.display = 'none'
+  eurasianButton.style.display = 'none'
   appendFlag ()
   answerOptions()
   revertButtonColors()

@@ -31,9 +31,6 @@ body.dark {
   background-repeat: no-repeat;
   background-size: cover;
   --inverted-btn-text-color: #763a3a;
-  --light-dark-btn-bg: linear-gradient(to right top, #3e4153, #595b6b, #6f7181,
-    #868898, #1f2a5e, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
-  --shin-bright-button: "Light-Mode";
   background-color: var(--body-bg);
 }
 
@@ -51,17 +48,6 @@ h1 {
   color: #2f2828;
   font-size: 18px;
   border-radius: 2px;
-}
-
-#dark-mode-light {
-  background-color: var(--inverted-btn-text-color);
-  background-image: var(--light-dark-btn-bg);
-  
-}
-
-#dark-mode-light::after  {
-  background-color: var(--inverted-btn-text-color);
-  background-image: var(--light-dark-btn-bg);
 }
 
 
@@ -118,8 +104,6 @@ nav {
   margin-top: 10px;
   display: flex;
   justify-content:flex-end;
-  /* align-items: flex-end;
-  text-align: right; */
   background-color: #af3232;
   color: #ede9e7;
 }
