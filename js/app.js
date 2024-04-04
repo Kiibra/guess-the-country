@@ -211,9 +211,3 @@ function render () {
 
 
 
-
-
-// references:
-// https://stackoverflow.com/questions/1297449/change-image-size-with-javascript
-// https://stackoverflow.com/questions/57201916/how-do-i-keep-track-of-the-score-in-a-quiz
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/remove

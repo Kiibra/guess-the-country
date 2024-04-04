@@ -19,11 +19,3 @@ export {
   playShineBright,
   playWavingFlag,
 }
-
-
-
-
-
-// audio sources:
-// https://youtu.be/WTJSt4wP2ME?si=L-Cfzug0XeKu_ORt
-// https://youtu.be/lWA2pjMjpBs?si=43MMqFMV-319Sd95
