@@ -71,15 +71,24 @@ h2 {
   color: rgb(4, 41, 29);
 }
 
-/* h1 {
+h3 {
   font-size: 18px;
-  color: rgb(127, 101, 108);
-} */
+  color: rgb(39, 34, 36);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.green {
+  background-color: rgb(15, 149, 15);
+}
+.red {
+background-color: rgb(236, 23, 23);
+}
 
 #back-button {
   display: flex;
   font-size: 18px;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   cursor: pointer;
   background-color: #b5bdc2;

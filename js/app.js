@@ -34,7 +34,7 @@ document.getElementById('back-button').addEventListener('click', ()=> {
   history.back();
 });
 
-// let scoreEl = document.getElementById('scores')
+let scoreEl = document.getElementById('scores')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -95,22 +95,26 @@ function selectTheAmericas (){
 
   appendFlag ()
   answerOptions()
+  revertButtonColors()
 }
 function selectAfrican (){
   currentCategory = getRandomAfrican()
 
   appendFlag ()
   answerOptions()
+  revertButtonColors()
 }
 function selectEurasia (){
   currentCategory = getRandomEurasia()
 
   appendFlag ()
   answerOptions()
+  revertButtonColors()
 }
 
 function selectButtons(evt){
   let button = evt.target
+  
   checkCorrectAnswer(button)
 }
 
@@ -139,21 +143,45 @@ function answerOptions (){
 
 
 function checkCorrectAnswer (button){
+  // revertButtonColors()
   correctAnswer = currentCategory.correctAnswer
   let answerChoice = button.textContent
   console.log(answerChoice)
-  if (answerChoice === correctAnswer) {
+    if(answerChoice === correctAnswer) {
       console.log ("correct")
-      button.style.background = "green"
-      button.style.color = 'white'
-  }else if(answerChoice !== correctAnswer)
-    console.log("incorrect")
-      button.style.background = 'red'
-      button.style.color = 'white'
+      button.classList.add('green')
+      // button.style.color = 'white'
+    }else if(answerChoice !== correctAnswer){
+      console.log("incorrect")
+      button.classList.add('red')
+      // button.style.color = 'white'
+    }
+
 }
 
+function revertButtonColors (){
+  console.log('revertButtonColors')
+  buttonElement1.classList.remove('red');
+  buttonElement1.classList.remove('green');
+  buttonElement2.classList.remove('green');
+  buttonElement2.classList.remove('red');
+  buttonElement3.classList.remove('green');
+  buttonElement3.classList.remove('red');
 
 
+}
+// console.log(revertButtonColors)
+
+
+function trackScore (){
+  for (let i = 0; i < currentCategory[currentQuestionIdx]; i++) {
+    if (answerChoice === correctAnswer ){
+    scoreEl.push (score) += 1;
+    }else {
+    scoreEl += 0;
+  }
+  }
+}
 
 
 
