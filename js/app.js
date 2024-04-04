@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-import { americas, african, eurasia } from "../data /continents.js";
+import { americas, african, eurasian } from "../data /continents.js";
 
 import * as shineWaving from "./audio.js"
 /*---------------------------- Variables (state) ----------------------------*/
@@ -23,14 +23,13 @@ const buttonElement3 = document.querySelector('#button3')
 const imageFlag = document.querySelector('.flag')
 
 
-const flagModeBtn = document.querySelector('#dark-mode-light')
+const flagModeBtn = document.querySelector('#flag-mode')
 const body = document.querySelector('body')
 
 const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
 
 
-// let scoreTrackerEl = document.getElementById('track-score')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -39,7 +38,7 @@ const scoreDisplayEl = document.getElementById('score-display')
 // });
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
-eurasianButton.addEventListener('click', selectEurasia)
+eurasianButton.addEventListener('click', selectEurasian)
 
 answerOptionsEl.addEventListener('click', selectButtons)
 
@@ -77,7 +76,6 @@ function shuffleQuestions(questionArray) {
     let randIdx = Math.floor(Math.random() * questionsToShuffle.length)
     shuffledQuestions.push(questionsToShuffle.splice(randIdx, 1)[0])
   }
-  console.log(shuffledQuestions)
   return shuffledQuestions
 }
 
@@ -95,8 +93,8 @@ function selectAfrican (){
   render()
 }
 
-function selectEurasia (){
-  currentCategory = shuffleQuestions([...eurasia])
+function selectEurasian (){
+  currentCategory = shuffleQuestions([...eurasian])
   currentQuestionIdx = 0
 
   render()
@@ -109,7 +107,7 @@ function selectButtons(evt){
     currentQuestionIdx += 1
     setTimeout(() => {
       render()
-    }, 1500)
+    }, 1000)
   }
 }
 

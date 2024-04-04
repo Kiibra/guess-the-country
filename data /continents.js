@@ -204,7 +204,7 @@ const african = [
     flagURL: '../assets/african/botswana_flag.png',
     options: [
       'Congo', 
-      'Botswan',
+      'Botswana',
       'Tanzania', 
     ],
     correctAnswer: 'Botswana'
@@ -365,7 +365,7 @@ const african = [
   },
 ]
 
-const eurasia = [
+const eurasian = [
   {
     flagURL:'../assets/eurasia/greece_flag.png',
     options: [
@@ -597,5 +597,5 @@ const eurasia = [
 export {
 americas, 
 african,
-eurasia
+eurasian
 }

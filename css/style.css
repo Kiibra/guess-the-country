@@ -80,6 +80,7 @@ h3 {
   justify-content: left;
   align-items: center;
   margin-left: 10px;
+  margin-top: 0px;
 }
 
 .green {
@@ -98,7 +99,6 @@ background-color: rgb(236, 23, 23);
   background-color: #b5bdc2;
   margin-top: 60px;
   margin-left: 10px;
-  
 }
 
 nav {
@@ -110,9 +110,19 @@ nav {
   background-color: #bcc3ed;
   margin-top: 0px;
   border-top:0dvh;
-
 }
 
+#flag-mode{
+  margin-left: 680px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  display: flex;
+  justify-content:flex-end;
+  /* align-items: flex-end;
+  text-align: right; */
+  background-color: #af3232;
+  color: #ede9e7;
+}
 
 button {
   background-color: rgb(227, 227, 200);
