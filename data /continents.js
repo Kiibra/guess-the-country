@@ -594,37 +594,8 @@ const eurasia = [
 ]
 
 
-function getRandomAmericas () {
-  return americas[Math.floor(Math.random() * americas.length)]
-}
-function getRandomAfrican () {
-  return african[Math.floor(Math.random() * african.length)]
-}
-function getRandomEurasia () {
-  return eurasia[Math.floor(Math.random() * eurasia.length)]
-}
-
-
 export {
-  getRandomAmericas,
-  getRandomAfrican,
-  getRandomEurasia
+americas, 
+african,
+eurasia
 }
-// export {
-//   getRandomAfrican,
-// }
-// export {
-// getRandomEurasia
-// }
-
-
-
-
-
-
-
-
-
-
-// Flags From:
-// https://www.nationsonline.org/oneworld/flags_of_the_americas.htm

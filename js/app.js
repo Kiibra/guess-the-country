@@ -1,12 +1,10 @@
 /*-------------------------------- Constants --------------------------------*/
-import { getRandomAmericas } from "../data /continents.js";
-import { getRandomAfrican } from "../data /continents.js";
-import { getRandomEurasia } from "../data /continents.js";
+import { americas, african, eurasia } from "../data /continents.js";
 
-import * as shinegWaving from "./audio.js"
+import * as shineWaving from "./audio.js"
 /*---------------------------- Variables (state) ----------------------------*/
 let currentCategory = []
-let currentQuestionIdx = {}
+let currentQuestionIdx = 0
 let score = 0
 let correctAnswer = ''
 let options = []
@@ -29,128 +27,108 @@ const flagModeBtn = document.querySelector('#dark-mode-light')
 const body = document.querySelector('body')
 
 const answerOptionsEl = document.querySelector('.answer-options')
+const scoreDisplayEl = document.getElementById('score-display')
 
-document.getElementById('back-button').addEventListener('click', ()=> {
-  history.back();
-});
 
-let scoreTrackerEl = document.getElementById('track-score')
+// let scoreTrackerEl = document.getElementById('track-score')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+// document.getElementById('back-button').addEventListener('click', ()=> {
+//   history.back();
+// });
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasia)
 
+answerOptionsEl.addEventListener('click', selectButtons)
 
-// buttonElement1.addEventListener('click', selectButton1)
-// buttonElement2.addEventListener('click', selectButton2)
-// buttonElement3.addEventListener('click', selectButton3)
 
 flagModeBtn.addEventListener('click', toggleDarkMode)
 
 // backBtnEl.addEventListener('click', returnBack)
 
-
-answerOptionsEl.addEventListener('click', selectButtons)
 /*-------------------------------- Functions --------------------------------*/
 function toggleDarkMode(){
   body.className = body.className === "dark" ? "" : "dark"
   if (body.className === "dark") {
-    shinegWaving.playWavingFlag()
+    shineWaving.playWavingFlag()
   } else {
-    shinegWaving.playShineBright()
+    shineWaving.playShineBright()
   }
 }
 
 
 init ()
 
-  function init () {
-    currentCategory = ['theAmericas, african, eurasia']
+function init () {
+  scoreDisplayEl.style.display = 'none'
     options = ''
-    currentQuestionIdx = {}
+    currentQuestionIdx = 0
     correctAnswer = ''
     score = 0
-    
-  render()
-
 }
 
-
-// function returnBack(){
-  // if a category has been chosen,
-  // style.display= '' the button
-  // if no Category has been chosen, then style.display="none"
-//   history.back()
-//   if(currentCategory !== null){
-//   backBtnEl.style.display = ''
-//   }else{
-//     backBtnEl.style.display = 'none'
-//   }
-// }
+function shuffleQuestions(questionArray) {
+  let numItemsToShuffle = questionArray.length
+  let questionsToShuffle = [...questionArray]
+  let shuffledQuestions = []
+  for (let i = 0; i < numItemsToShuffle; i++) {
+    let randIdx = Math.floor(Math.random() * questionsToShuffle.length)
+    shuffledQuestions.push(questionsToShuffle.splice(randIdx, 1)[0])
+  }
+  console.log(shuffledQuestions)
+  return shuffledQuestions
+}
 
 function selectTheAmericas (){
-  currentCategory = getRandomAmericas()
+  currentCategory = shuffleQuestions([...americas])
+  currentQuestionIdx = 0
 
-  appendFlag ()
-  answerOptions()
-  revertButtonColors()
+  render()
 }
+
 function selectAfrican (){
-  currentCategory = getRandomAfrican()
+  currentCategory = shuffleQuestions([...african])
+  currentQuestionIdx = 0
 
-  appendFlag ()
-  answerOptions()
-  revertButtonColors()
-
-
+  render()
 }
-function selectEurasia (){
-  currentCategory = getRandomEurasia()
 
-  appendFlag ()
-  answerOptions()
-  revertButtonColors()
-  displayNextQuestion()
+function selectEurasia (){
+  currentCategory = shuffleQuestions([...eurasia])
+  currentQuestionIdx = 0
+
+  render()
 }
 
 function selectButtons(evt){
   let button = evt.target
-  
-  checkCorrectAnswer(button)
+  if (button.nodeName === 'BUTTON') {
+    checkCorrectAnswer(button)
+    currentQuestionIdx += 1
+    setTimeout(() => {
+      render()
+    }, 1500)
+  }
 }
 
 
 function appendFlag (){
-    imageFlag.src = currentCategory.flagURL
+    imageFlag.src = currentCategory[currentQuestionIdx].flagURL
     imageFlag.style.height = '300px'
     imageFlag.style.width = '500px'
 }
 
-
-function handleClick (evt) {
-
-appendFlag ()
-answerOptions()
-}
-
-function displayNextQuestion(){
-  for(let i=0; i < currentCategory.length; i++){
-    currentQuestionIdx;  
-  }
-}
-
 function answerOptions (){ 
-    buttonElement1.textContent = currentCategory.options[0]
-    buttonElement2.textContent = currentCategory.options[1]
-    buttonElement3.textContent = currentCategory.options[2]
+    buttonElement1.textContent = currentCategory[currentQuestionIdx].options[0]
+    buttonElement2.textContent = currentCategory[currentQuestionIdx].options[1]
+    buttonElement3.textContent = currentCategory[currentQuestionIdx].options[2]
 }
-
 
 
 function checkCorrectAnswer (button){
-  correctAnswer = currentCategory.correctAnswer
+  correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
     if(answerChoice === correctAnswer) {
       console.log ("correct")
@@ -161,6 +139,7 @@ function checkCorrectAnswer (button){
     }
     trackScore(button)
 }
+
 
 function revertButtonColors (){
   buttonElement1.classList.remove('red');
@@ -173,38 +152,20 @@ function revertButtonColors (){
 
 
 function trackScore (button){
+  scoreDisplayEl.style.display = ''
   let answerChoice = button.textContent
     if (answerChoice === correctAnswer ){
     score +=  1;
     
-    scoreTrackerEl.innerText = score
     }
+    scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
-
-
 
 
 function render () {
 
-  // checkCorrectAnswer()
+  appendFlag ()
+  answerOptions()
+  revertButtonColors()
 }
-
-
-
-
-
-// use style.display = '' and style.display = 'none' to show display
-// if (currentCategory){
-//   appendFlag.style.display = ''
-
-// }else{
-
-// }
-
-
-
-
-
-
-
 

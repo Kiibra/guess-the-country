@@ -1,11 +1,11 @@
 let wavingFlag = new Audio('../assets/wave-flag.mp3')
-let shineBright = new Audio('../assets/riri-shineBright.mp3')
+let diamond = new Audio('../assets/riri-diamond.mp3')
 
 
 
 function playShineBright() {
-  shineBright.volume = 0.30
-  shineBright.play()
+  diamond.volume = 0.45
+  diamond.play()
 }
 
 function playWavingFlag() {
