@@ -34,7 +34,7 @@ document.getElementById('back-button').addEventListener('click', ()=> {
   history.back();
 });
 
-let scoreEl = document.getElementById('scores')
+let scoreTrackerEl = document.querySelector('.score')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -89,13 +89,13 @@ init ()
 //   }
 // }
 
-
 function selectTheAmericas (){
   currentCategory = getRandomAmericas()
 
   appendFlag ()
   answerOptions()
   revertButtonColors()
+  // trackScore()
 }
 function selectAfrican (){
   currentCategory = getRandomAfrican()
@@ -103,6 +103,7 @@ function selectAfrican (){
   appendFlag ()
   answerOptions()
   revertButtonColors()
+  // trackScore()
 }
 function selectEurasia (){
   currentCategory = getRandomEurasia()
@@ -110,12 +111,14 @@ function selectEurasia (){
   appendFlag ()
   answerOptions()
   revertButtonColors()
+  // trackScore()
 }
 
 function selectButtons(evt){
   let button = evt.target
   
   checkCorrectAnswer(button)
+  // trackScore()
 }
 
 
@@ -154,13 +157,13 @@ function checkCorrectAnswer (button){
     }else if(answerChoice !== correctAnswer){
       console.log("incorrect")
       button.classList.add('red')
+      // clearInterval(interval)
       // button.style.color = 'white'
     }
-
+    trackScore(button)
 }
 
 function revertButtonColors (){
-  console.log('revertButtonColors')
   buttonElement1.classList.remove('red');
   buttonElement1.classList.remove('green');
   buttonElement2.classList.remove('green');
@@ -170,18 +173,17 @@ function revertButtonColors (){
 
 
 }
-// console.log(revertButtonColors)
 
 
-function trackScore (){
-  for (let i = 0; i < currentCategory[currentQuestionIdx]; i++) {
+function trackScore (button){
+  let answerChoice = button.textContent
     if (answerChoice === correctAnswer ){
-    scoreEl.push (score) += 1;
-    }else {
-    scoreEl += 0;
-  }
-  }
+    score +=  1;
+    
+    scoreTrackerEl.textContent = score
+    }
 }
+
 
 
 
