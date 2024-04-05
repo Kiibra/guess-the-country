@@ -29,7 +29,7 @@ const body = document.querySelector('body')
 const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
 
-
+const messageEl = document.getElementById('message')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -63,6 +63,7 @@ function init () {
   buttonElement1.style.display = 'none'
   buttonElement2.style.display = 'none'
   buttonElement3.style.display = 'none'
+  messageEl.style.display='none'
   theAmericasButton.style.display = ''
   eurasianButton.style.display = ''
   options = ''
@@ -72,12 +73,14 @@ function init () {
 }
 
 function shuffleQuestions(questionArray) {
+  console.log(questionArray)
   let numItemsToShuffle = questionArray.length
   let questionsToShuffle = [...questionArray]
   let shuffledQuestions = []
   for (let i = 0; i < numItemsToShuffle; i++) {
     let randIdx = Math.floor(Math.random() * questionsToShuffle.length)
     shuffledQuestions.push(questionsToShuffle.splice(randIdx, 1)[0])
+
   }
   return shuffledQuestions
 }
@@ -116,9 +119,11 @@ function selectButtons(evt){
 
 
 function appendFlag (){
-    imageFlag.src = currentCategory[currentQuestionIdx].flagURL
-    imageFlag.style.height = '300px'
-    imageFlag.style.width = '500px'
+  if(currentCategory != currentCategory.length){
+  imageFlag.src = currentCategory[currentQuestionIdx].flagURL
+  imageFlag.style.height = '300px'
+  imageFlag.style.width = '500px'
+  }
 }
 
 function answerOptions (){ 
@@ -139,6 +144,7 @@ function checkCorrectAnswer (button){
       button.classList.add('red')
     }
     trackScore(button)
+    // feedbackMessage()
 }
 
 
@@ -162,6 +168,20 @@ function trackScore (button){
     scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 
+// function feedbackMessage (){
+//   if(currentCategory === currentCategory.length && score >= 10 ){
+//     messageEl.textContent = "well done your knowledge of the `${currentCategory} is decent!!`" 
+//   }else if (currentCategory.length === currentCategory.length && score < 10 ){
+//     messageEl.textContent = "That's a little low. Try again next time!"
+//   }
+// }
+
+// function abortAppendFlag (){
+//   if(currentCategory != currentCategory.length){
+//     appendFlag()
+//   }
+//   feedbackMessage()
+// }
 
 function render () {
   buttonElement1.style.display = ''
@@ -173,5 +193,6 @@ function render () {
   appendFlag ()
   answerOptions()
   revertButtonColors()
+  feedbackMessage()
 }
 
