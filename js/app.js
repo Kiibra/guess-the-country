@@ -163,12 +163,13 @@ function trackScore (button){
 }
 
 function feedbackMessage (){
-  if(flagsLeft === 0 && score >= 10 ){
+  if(score >= 10 ){
     messageEl.textContent = "Well done!!" 
     console.log(messageEl.textContent)
-  }else if (flagsLeft == 0 && score < 10 ){
+  }else if (score < 10 ){
     messageEl.textContent = "That's a little low. Try again next time!"
   }
+  console.log(messageEl)
 }
 
 function render () {
@@ -179,7 +180,6 @@ function render () {
   africanButton.style.display = 'none'
   eurasianButton.style.display = 'none'
   resetBtnEl.style.display = ''
-  
   // flagsLeft = currentCategory.length
   if(flagsLeft !== 0){
     revertButtonColors()
@@ -187,7 +187,7 @@ function render () {
     answerOptions()
     appendFlag ()
   }else if(flagsLeft === 0){
-    // feedbackMessage()
+    messageEl.style.display = ''
       // theAmericasButton.style.display= 'none'
     // africanButton.style.display = 'none'
     // eurasianButton.style.display = 'none'
