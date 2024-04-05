@@ -6,8 +6,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-
 body {
   background-color: #8ac9d7;
   --body-bg: #d3d5f2;
@@ -23,11 +21,9 @@ body {
   margin: 0px;
   border-radius: 8px;
 }
-
-
 body.dark {
   --body-bg: #1b1206;
-  background-image: url("../assets/flags.png");
+  background-image: url("../assets/images/flags.png");
   background-repeat: no-repeat;
   background-size: cover;
   --inverted-btn-text-color: #763a3a;
@@ -73,18 +69,22 @@ h3 {
   background-color: rgb(15, 149, 15);
 }
 .red {
-background-color: rgb(236, 23, 23);
+  background-color: rgb(236, 23, 23);
 }
 
-#back-button {
+#reset-button {
   display: flex;
   font-size: 16px;
-  justify-content: left;
-  align-items: center;
+  /* flex-direction: column; */
+  /* padding: 80px 200px; */
+  align-content:flex-end;
+  align-items:flex-end;
+  justify-content: flex-end;
+  position: relative;
   cursor: pointer;
   background-color: #b5bdc2;
-  margin-top: 60px;
-  margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 700px;
 }
 
 nav {
@@ -106,6 +106,9 @@ nav {
   justify-content:flex-end;
   background-color: #af3232;
   color: #ede9e7;
+}
+.flag {
+  margin-top: 20px;
 }
 
 button {
@@ -138,7 +141,7 @@ button {
 .board-container {
   background-color: #d3d6ef93;
   width: 860px;
-  height: 580px;
+  height: 560px;
 }
 
 

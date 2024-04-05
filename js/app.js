@@ -8,22 +8,19 @@ let currentQuestionIdx = 0
 let score = 0
 let correctAnswer = ''
 let options = []
-let appendCount = 0
-let numItemsToShuffle = 0
+let flagsLeft = 0
 
 /*------------------------ Cached Element References ------------------------*/
 
-const theAmericasButton =document.querySelector('#americas-button')
+const theAmericasButton = document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
 const eurasianButton = document.querySelector('#eurasian-button')
 
-
 const buttonElement1 = document.querySelector('#button1')
-const buttonElement2= document.querySelector('#button2')
+const buttonElement2 = document.querySelector('#button2')
 const buttonElement3 = document.querySelector('#button3')
 
 const imageFlag = document.querySelector('.flag')
-
 
 const flagModeBtn = document.querySelector('#flag-mode')
 const body = document.querySelector('body')
@@ -32,31 +29,27 @@ const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
 
 const messageEl = document.getElementById('message')
+const resetBtnEl = document.getElementById('reset-button')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// document.getElementById('back-button').addEventListener('click', ()=> {
-//   history.back();
-// });
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasian)
 
 answerOptionsEl.addEventListener('click', selectButtons)
 
+flagModeBtn.addEventListener('click', toggleMode)
 
-flagModeBtn.addEventListener('click', toggleDarkMode)
-
-// backBtnEl.addEventListener('click', returnBack)
+resetBtnEl.addEventListener('click', resetQuestions)
 
 /*-------------------------------- Functions --------------------------------*/
-function toggleDarkMode(){
+function toggleMode(){
   body.className = body.className === "dark" ? "" : "dark"
   if (body.className === "dark") {
     shineWaving.playWavingFlag()
   } 
 }
-
 
 init ()
 
@@ -68,11 +61,18 @@ function init () {
   messageEl.style.display='none'
   theAmericasButton.style.display = ''
   eurasianButton.style.display = ''
-  options = ''
+  africanButton.style.display = ''
+  imageFlag.style.display = ''
+  resetBtnEl.style.display = 'none'
+    options = ''
     currentQuestionIdx = 0
     correctAnswer = ''
     score = 0
 }
+function resetQuestions(){
+  currentCategory.textContent = 0
+  render()
+  }
 
 function shuffleQuestions(questionArray) {
   let numItemsToShuffle = questionArray.length
@@ -81,7 +81,6 @@ function shuffleQuestions(questionArray) {
   for (let i = 0; i < numItemsToShuffle; i++) {
     let randIdx = Math.floor(Math.random() * questionsToShuffle.length)
     shuffledQuestions.push(questionsToShuffle.splice(randIdx, 1)[0])
-
   }
   return shuffledQuestions
 }
@@ -89,21 +88,21 @@ function shuffleQuestions(questionArray) {
 function selectTheAmericas (){
   currentCategory = shuffleQuestions([...americas])
   currentQuestionIdx = 0
-
+  flagsLeft = currentCategory.length
   render()
 }
 
 function selectAfrican (){
   currentCategory = shuffleQuestions([...african])
   currentQuestionIdx = 0
-
+  flagsLeft = currentCategory.length
   render()
 }
 
 function selectEurasian (){
   currentCategory = shuffleQuestions([...eurasian])
   currentQuestionIdx = 0
-
+  flagsLeft = currentCategory.length
   render()
 }
 
@@ -112,19 +111,17 @@ function selectButtons(evt){
   if (button.nodeName === 'BUTTON') {
     checkCorrectAnswer(button)
     currentQuestionIdx += 1
+    flagsLeft -= 1
     setTimeout(() => {
       render()
     }, 1000)
   }
 }
 
-
 function appendFlag (){
-  if(currentCategory != currentCategory.length){
   imageFlag.src = currentCategory[currentQuestionIdx].flagURL
   imageFlag.style.height = '300px'
   imageFlag.style.width = '500px'
-  }
 }
 
 function answerOptions (){ 
@@ -133,21 +130,18 @@ function answerOptions (){
   buttonElement3.textContent = currentCategory[currentQuestionIdx].options[2]
 }
 
-
 function checkCorrectAnswer (button){
-  correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
+  let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
-    if(answerChoice === correctAnswer) {
+    if(answerChoice === correctAnswer){
       console.log ("correct")
       button.classList.add('green')
     }else if(answerChoice !== correctAnswer){
       console.log("incorrect")
       button.classList.add('red')
     }
-    trackScore(button)
-    feedbackMessage()
+  trackScore(button)
 }
-
 
 function revertButtonColors (){
   buttonElement1.classList.remove('red');
@@ -164,19 +158,18 @@ function trackScore (button){
   let answerChoice = button.textContent
     if (answerChoice === correctAnswer ){
     score +=  1;
-    
     }
     scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 
 function feedbackMessage (){
-  if(appendCount === currentCategory.length && score >= 10 ){
-    messageEl.textContent = "well done your knowledge of the `${currentCategory} is decent!!`" 
-  }else if (appendCount === currentCategory.length && score < 10 ){
+  if(flagsLeft === 0 && score >= 10 ){
+    messageEl.textContent = "Well done!!" 
+    console.log(messageEl.textContent)
+  }else if (flagsLeft == 0 && score < 10 ){
     messageEl.textContent = "That's a little low. Try again next time!"
   }
 }
-
 
 function render () {
   buttonElement1.style.display = ''
@@ -185,10 +178,18 @@ function render () {
   theAmericasButton.style.display = 'none'
   africanButton.style.display = 'none'
   eurasianButton.style.display = 'none'
-  appendCount += 1
-  if(appendCount != numItemsToShuffle+1){
-    appendFlag ()
-    answerOptions()
+  resetBtnEl.style.display = ''
+  
+  // flagsLeft = currentCategory.length
+  if(flagsLeft !== 0){
     revertButtonColors()
+    feedbackMessage()
+    answerOptions()
+    appendFlag ()
+  }else if(flagsLeft === 0){
+    // feedbackMessage()
+      // theAmericasButton.style.display= 'none'
+    // africanButton.style.display = 'none'
+    // eurasianButton.style.display = 'none'
   }
 }
