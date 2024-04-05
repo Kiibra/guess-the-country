@@ -1,7 +1,5 @@
 ![](assets/images/image1.png)
-![](assets/images/image2.png)
-
-
+<!-- ![](assets/images/image2.png) -->
 ======*Guess the Country of the Flag*======
 ---
 

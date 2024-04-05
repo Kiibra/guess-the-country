@@ -8,6 +8,8 @@ let currentQuestionIdx = 0
 let score = 0
 let correctAnswer = ''
 let options = []
+let appendCount = 0
+let numItemsToShuffle = 0
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -73,7 +75,6 @@ function init () {
 }
 
 function shuffleQuestions(questionArray) {
-  console.log(questionArray)
   let numItemsToShuffle = questionArray.length
   let questionsToShuffle = [...questionArray]
   let shuffledQuestions = []
@@ -127,9 +128,9 @@ function appendFlag (){
 }
 
 function answerOptions (){ 
-    buttonElement1.textContent = currentCategory[currentQuestionIdx].options[0]
-    buttonElement2.textContent = currentCategory[currentQuestionIdx].options[1]
-    buttonElement3.textContent = currentCategory[currentQuestionIdx].options[2]
+  buttonElement1.textContent = currentCategory[currentQuestionIdx].options[0]
+  buttonElement2.textContent = currentCategory[currentQuestionIdx].options[1]
+  buttonElement3.textContent = currentCategory[currentQuestionIdx].options[2]
 }
 
 
@@ -144,7 +145,7 @@ function checkCorrectAnswer (button){
       button.classList.add('red')
     }
     trackScore(button)
-    // feedbackMessage()
+    feedbackMessage()
 }
 
 
@@ -168,20 +169,14 @@ function trackScore (button){
     scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 
-// function feedbackMessage (){
-//   if(currentCategory === currentCategory.length && score >= 10 ){
-//     messageEl.textContent = "well done your knowledge of the `${currentCategory} is decent!!`" 
-//   }else if (currentCategory.length === currentCategory.length && score < 10 ){
-//     messageEl.textContent = "That's a little low. Try again next time!"
-//   }
-// }
+function feedbackMessage (){
+  if(appendCount === currentCategory.length && score >= 10 ){
+    messageEl.textContent = "well done your knowledge of the `${currentCategory} is decent!!`" 
+  }else if (appendCount === currentCategory.length && score < 10 ){
+    messageEl.textContent = "That's a little low. Try again next time!"
+  }
+}
 
-// function abortAppendFlag (){
-//   if(currentCategory != currentCategory.length){
-//     appendFlag()
-//   }
-//   feedbackMessage()
-// }
 
 function render () {
   buttonElement1.style.display = ''
@@ -190,9 +185,10 @@ function render () {
   theAmericasButton.style.display = 'none'
   africanButton.style.display = 'none'
   eurasianButton.style.display = 'none'
-  appendFlag ()
-  answerOptions()
-  revertButtonColors()
-  feedbackMessage()
+  appendCount += 1
+  if(appendCount != numItemsToShuffle+1){
+    appendFlag ()
+    answerOptions()
+    revertButtonColors()
+  }
 }
-

@@ -237,7 +237,7 @@ const african = [
     correctAnswer: 'Congo DRC'
   },
   {
-    flagURL: '../assets/african/cote_d_ivoire_flag.png',
+    flagURL: '../assets/african/cote_d_Ivoire_flag.png',
     options: [
       'Eritrea', 
       'Italy',
