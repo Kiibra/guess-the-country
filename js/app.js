@@ -70,9 +70,8 @@ function init () {
     score = 0
 }
 function resetQuestions(){
-  currentCategory.textContent = 0
-  render()
-  }
+  init()
+}
 
 function shuffleQuestions(questionArray) {
   let numItemsToShuffle = questionArray.length
@@ -133,13 +132,11 @@ function answerOptions (){
 function checkCorrectAnswer (button){
   let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
-    if(answerChoice === correctAnswer){
-      console.log ("correct")
-      button.classList.add('green')
-    }else if(answerChoice !== correctAnswer){
-      console.log("incorrect")
-      button.classList.add('red')
-    }
+  if(answerChoice === correctAnswer){
+    button.classList.add('green')
+  }else if(answerChoice !== correctAnswer){
+    button.classList.add('red')
+  }
   trackScore(button)
 }
 
@@ -155,11 +152,12 @@ function revertButtonColors (){
 
 function trackScore (button){
   scoreDisplayEl.style.display = ''
+  let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
-    if (answerChoice === correctAnswer ){
+  if (answerChoice === correctAnswer ){
     score +=  1;
-    }
-    scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
+  }
+  scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 
 function feedbackMessage (){
@@ -169,7 +167,6 @@ function feedbackMessage (){
   }else if (score < 10 ){
     messageEl.textContent = "That's a little low. Try again next time!"
   }
-  console.log(messageEl)
 }
 
 function render () {
