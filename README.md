@@ -1,6 +1,6 @@
 ![](assets/images/image1.png)
 
-======* Guess the Country of the Flag *======
+## Guess the Country of the Flag
 ---
 
 # `Description:`

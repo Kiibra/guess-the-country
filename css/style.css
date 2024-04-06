@@ -8,7 +8,7 @@ html {
 }
 body {
   background-color: #8ac9d7;
-  --body-bg: #d3d5f2;
+  --body-bg: #3694c0;
   --inverted-btn-text-color: #a67c7c;
   --light-dark-btn-bg: #bcbfe3;
   --waving-flag-btn-content: "Dark Mode";
@@ -40,19 +40,20 @@ body.dark {
 }
 
 h1 {
-  background: #e7e4e1;
-  color: #2f2828;
+  background: #dcd9d5b1;
+  color: #141313;
   font-size: 18px;
   border-radius: 2px;
 }
 
 
 h2 {
-  font-family: "Rakkas", serif;
-  font-weight: 100;
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing:auto;
+  font-weight: 400;
   font-style: normal;
   font-size: 28px;
-  color: rgb(4, 41, 29);
+  color: rgb(24, 25, 25);
 }
 
 h3 {
@@ -75,16 +76,14 @@ h3 {
 #reset-button {
   display: flex;
   font-size: 16px;
-  /* flex-direction: column; */
-  /* padding: 80px 200px; */
   align-content:flex-end;
   align-items:flex-end;
   justify-content: flex-end;
   position: relative;
   cursor: pointer;
-  background-color: #b5bdc2;
-  margin-top: 10px;
-  margin-left: 700px;
+  background-color: #a8afb4;
+  margin-top: 0px;
+  margin-left: 740px;
 }
 
 nav {
@@ -93,7 +92,7 @@ nav {
   border-radius: none;
   justify-content: center;
   align-items: center;
-  background-color: #bcc3ed;
+  background-color: #60a7d5;
   margin-top: 0px;
   border-top:0dvh;
 }
@@ -108,7 +107,9 @@ nav {
   color: #ede9e7;
 }
 .flag {
-  margin-top: 20px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -139,10 +140,10 @@ button {
 }
 
 .board-container {
-  background-color: #d3d6ef93;
+  background-color: #d3d6e97a;
   width: 860px;
-  height: 560px;
+  height: 630px;
+  border-radius: 5px;
 }
-
 
 

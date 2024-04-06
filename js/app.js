@@ -59,9 +59,9 @@ function init () {
   buttonElement2.style.display = 'none'
   buttonElement3.style.display = 'none'
   messageEl.style.display='none'
-  theAmericasButton.style.display = ''
-  eurasianButton.style.display = ''
-  africanButton.style.display = ''
+  // theAmericasButton.style.display = ''
+  // eurasianButton.style.display = ''
+  // africanButton.style.display = ''
   imageFlag.style.display = ''
   resetBtnEl.style.display = 'none'
     options = ''
@@ -70,6 +70,7 @@ function init () {
     score = 0
 }
 function resetQuestions(){
+
   init()
 }
 
@@ -173,9 +174,9 @@ function render () {
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
-  theAmericasButton.style.display = 'none'
-  africanButton.style.display = 'none'
-  eurasianButton.style.display = 'none'
+  // theAmericasButton.style.display = 'none'
+  // africanButton.style.display = 'none'
+  // eurasianButton.style.display = 'none'
   resetBtnEl.style.display = ''
   // flagsLeft = currentCategory.length
   if(flagsLeft !== 0){
