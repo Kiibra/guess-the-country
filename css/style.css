@@ -7,13 +7,10 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: #8ac9d7;
-  --body-bg: #3694c0;
-  --inverted-btn-text-color: #a67c7c;
-  --light-dark-btn-bg: #bcbfe3;
-  --waving-flag-btn-content: "Dark Mode";
+  background-color: #E8E9EB;
+  --body-bg: #94d1ed;
+  --inverted-btn-text-color: #e0cdcd;
   align-items: center;
-  background-color: var(--body-bg);
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -22,31 +19,16 @@ body {
   border-radius: 8px;
 }
 body.dark {
-  --body-bg: #1b1206;
   background-image: url("../assets/images/flags.png");
   background-repeat: no-repeat;
   background-size: cover;
-  --inverted-btn-text-color: #763a3a;
-  background-color: var(--body-bg);
 }
-
-#dark-mode-light {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  color: #e9eaf0;
-  background-color: #bdd8df;
-}
-
 h1 {
   background: #dcd9d5b1;
   color: #141313;
   font-size: 18px;
   border-radius: 2px;
 }
-
-
 h2 {
   font-family: "Unbounded", sans-serif;
   font-optical-sizing:auto;
@@ -55,7 +37,6 @@ h2 {
   font-size: 28px;
   color: rgb(24, 25, 25);
 }
-
 h3 {
   font-size: 18px;
   color: rgb(39, 34, 36);
@@ -65,14 +46,12 @@ h3 {
   margin-left: 10px;
   margin-top: 0px;
 }
-
 .green {
   background-color: rgb(15, 149, 15);
 }
 .red {
   background-color: rgb(236, 23, 23);
 }
-
 #reset-button {
   display: flex;
   font-size: 16px;
@@ -85,18 +64,16 @@ h3 {
   margin-top: 0px;
   margin-left: 740px;
 }
-
 nav {
   display: flex;
   width: 100%;
   border-radius: none;
   justify-content: center;
   align-items: center;
-  background-color: #60a7d5;
+  background-color: #e4ede2;
   margin-top: 0px;
   border-top:0dvh;
 }
-
 #flag-mode{
   margin-left: 680px;
   margin-bottom: 0px;
@@ -111,7 +88,6 @@ nav {
   justify-content: center;
   align-items: center;
 }
-
 button {
   background-color: rgb(227, 227, 200);
   border: 0px;
@@ -125,7 +101,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 #track-score {
   display: flex;
   align-items: end;
@@ -133,14 +108,13 @@ button {
   flex-flow: row;
   margin-left:10px;
 }
-
 .score{
   font-style: italic;
   
 }
-
 .board-container {
-  background-color: #d3d6e97a;
+  background-color: #f7fff68d;
+  margin-top: 10px;
   width: 860px;
   height: 630px;
   border-radius: 5px;

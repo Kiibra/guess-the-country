@@ -1,16 +1,13 @@
-/*-------------------------------- Constants --------------------------------*/
 import { americas, african, eurasian } from "../data /continents.js";
 
 import * as shineWaving from "./audio.js"
-/*---------------------------- Variables (state) ----------------------------*/
+
 let currentCategory = []
 let currentQuestionIdx = 0
 let score = 0
 let correctAnswer = ''
 let options = []
 let flagsLeft = 0
-
-/*------------------------ Cached Element References ------------------------*/
 
 const theAmericasButton = document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
@@ -31,8 +28,6 @@ const scoreDisplayEl = document.getElementById('score-display')
 const messageEl = document.getElementById('message')
 const resetBtnEl = document.getElementById('reset-button')
 
-/*----------------------------- Event Listeners -----------------------------*/
-
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasian)
@@ -43,7 +38,6 @@ flagModeBtn.addEventListener('click', toggleMode)
 
 resetBtnEl.addEventListener('click', resetQuestions)
 
-/*-------------------------------- Functions --------------------------------*/
 function toggleMode(){
   body.className = body.className === "dark" ? "" : "dark"
   if (body.className === "dark") {
@@ -58,18 +52,16 @@ function init () {
   buttonElement1.style.display = 'none'
   buttonElement2.style.display = 'none'
   buttonElement3.style.display = 'none'
-  messageEl.style.display='none'
-  // theAmericasButton.style.display = ''
-  // eurasianButton.style.display = ''
-  // africanButton.style.display = ''
-  imageFlag.style.display = ''
   resetBtnEl.style.display = 'none'
+  messageEl.style.display='none'
+  imageFlag.style.display = 'none'
     options = ''
-    currentQuestionIdx = 0
     correctAnswer = ''
+    currentQuestionIdx = 0
     score = 0
 }
 function resetQuestions(){
+  
 
   init()
 }
@@ -122,6 +114,7 @@ function appendFlag (){
   imageFlag.src = currentCategory[currentQuestionIdx].flagURL
   imageFlag.style.height = '300px'
   imageFlag.style.width = '500px'
+
 }
 
 function answerOptions (){ 
@@ -162,30 +155,30 @@ function trackScore (button){
 }
 
 function feedbackMessage (){
-  if(score >= 10 ){
-    messageEl.textContent = "Well done!!" 
-    console.log(messageEl.textContent)
-  }else if (score < 10 ){
-    messageEl.textContent = "That's a little low. Try again next time!"
+  if(score === 10 ){
+    messageEl.textContent = "That is a decent score. Great job!!" 
+  }else if (score >= 18 ){
+    messageEl.textContent = "Well done!! Your knowledge of this continent is toptier" 
+  }else if(score < 10 ){
+    messageEl.textContent = "That's a little low. Maybe spin around the globe from time to time!!"
   }
 }
 
 function render () {
+  imageFlag.style.display = ''
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
-  // theAmericasButton.style.display = 'none'
-  // africanButton.style.display = 'none'
-  // eurasianButton.style.display = 'none'
   resetBtnEl.style.display = ''
-  // flagsLeft = currentCategory.length
+
   if(flagsLeft !== 0){
     revertButtonColors()
-    feedbackMessage()
     answerOptions()
     appendFlag ()
   }else if(flagsLeft === 0){
+    feedbackMessage()
     messageEl.style.display = ''
+    imageFlag.style.display = 'none'
       // theAmericasButton.style.display= 'none'
     // africanButton.style.display = 'none'
     // eurasianButton.style.display = 'none'
