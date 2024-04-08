@@ -14,6 +14,8 @@ body.flag {
   background-image: url("../assets/images/flagss.png");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+  margin-top: 0px;
 }
 h1 {
   background: #dcd9d5b1;
@@ -64,8 +66,10 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #e4ede2;
-  margin-top: 0px;
   border-top:0dvh;
+  padding: 0%;
+  overflow: hidden;
+  margin-top: 0px;
 }
 #flag-mode{
   margin-left: 680px;
