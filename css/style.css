@@ -19,7 +19,7 @@ body {
   border-radius: 8px;
 }
 body.dark {
-  background-image: url("../assets/images/flags.png");
+  background-image: url("../assets/images/flagss.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -97,7 +97,7 @@ button {
   border-radius: 8px;
   margin: 10px;
   margin-top: 40px;
-  margin-bottom: 35px;
+  margin-bottom: 23px;
   padding: 8px 10px;
   align-items: center;
   justify-content: center;
@@ -108,6 +108,8 @@ button {
   justify-content: flex-start;
   flex-flow: row;
   margin-left:10px;
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
 .score{
   font-style: italic;
@@ -117,6 +119,6 @@ button {
   background-color: #f7fff68d;
   margin-top: 10px;
   width: 860px;
-  height: 680px;
+  height: 690px;
   border-radius: 5px;
 }

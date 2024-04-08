@@ -158,18 +158,18 @@ function feedbackMessage (){
   if(score === 10 ){
     messageEl.textContent = "That is a decent score. Great job!!" 
   }else if (score >= 18 ){
-    messageEl.textContent = "Well done!! Your knowledge of this continent is toptier" 
-  }else if(score < 10 ){
+    messageEl.textContent = `Well done!! Your knowledge of this continent is exceptional`
+  }else if(score <= 10 ){
     messageEl.textContent = "That's a little low. Maybe spin around the globe from time to time!!"
   }
 }
 
 function render () {
   imageFlag.style.display = ''
+  resetBtnEl.style.display = ''
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
-  resetBtnEl.style.display = ''
 
   if(flagsLeft !== 0){
     revertButtonColors()
@@ -179,8 +179,8 @@ function render () {
     feedbackMessage()
     messageEl.style.display = ''
     imageFlag.style.display = 'none'
-      // theAmericasButton.style.display= 'none'
-    // africanButton.style.display = 'none'
-    // eurasianButton.style.display = 'none'
+    buttonElement1.style.display = 'none'
+    buttonElement2.style.display = 'none'
+    buttonElement3.style.display = 'none'
   }
 }

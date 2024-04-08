@@ -524,7 +524,7 @@ const eurasian = [
     options: [
       'Malaysia', 
       'Brazil',
-      'Norway', 
+      'Spain', 
     ],
     correctAnswer: 'Spain'
   },
