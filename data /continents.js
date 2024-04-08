@@ -1,130 +1,130 @@
 const americas = [
-//   {
-//     flagURL: '../assets/americas/brazil_flag.png',
-//     options: [
-//       'Brazil', 
-//       'Cuba',
-//       'Jamaica', 
-//     ],
-//     correctAnswer: 'Brazil'
-//   },
-//   {
-//     flagURL: '../assets/americas/canada_flag.png',
-//     options: [
-//       'Costa Rica', 
-//       'Cameroon',
-//       'Canada', 
-//     ],
-//     correctAnswer: 'Canada'
-//   },
-//   {
-//     flagURL: '../assets/americas/saint_lucia_flag.png',
-//     options: [
-//       'USA', 
-//       'Haiti',
-//       'Saint Lucia', 
-//     ],
-//     correctAnswer: 'Saint Lucia'
-//   },
-//   {
-//     flagURL: '../assets/americas/colombia_flag.png',
-//     options: [
-//       'Ecuador', 
-//       'Columbia',
-//       'Canada', 
-//     ],
-//     correctAnswer: 'Columbia'
-//   },
-//   {
-//     flagURL: '../assets/americas/ecuador_flag.png',
-//     options: [
-//       'El Salvador', 
-//       'Ecuador',
-//       'Columbia', 
-//     ],
-//     correctAnswer: 'Ecuador'
-//   },
-//   {
-//     flagURL: '../assets/americas/honduras_flag.png',
-//     options: [
-//       'Panama', 
-//       'El Salvador',
-//       'Uruguay', 
-//     ],
-//     correctAnswer: 'Honduras'
-//   },
-//   {
-//     flagURL: '../assets/americas/argentina_flag.png',
-//     options: [
-//       'Argentina', 
-//       'Cameroon',
-//       'Honduras', 
-//     ],
-//     correctAnswer: 'Argentina'
-//   },
-//   {
-//     flagURL: '../assets/americas/guyana_flag.png',
-//     options: [
-//       'Aruba', 
-//       'Brazil',
-//       'Guyana', 
-//     ],
-//     correctAnswer: 'Guyana'
-//   },
-//   {
-//     flagURL: '../assets/americas/aruba_flag.png',
-//     options: [
-//       'Argentina', 
-//       'Bahamas',
-//       'Aruba', 
-//     ],
-//     correctAnswer: 'Aruba'
-//   },
-//   {
-//     flagURL: '../assets/americas/british_virgin_islands_flag.png',
-//     options: [
-//       'Dominican Republic', 
-//       'Panama',
-//       'British Virgin Islands', 
-//     ],
-//     correctAnswer: 'British Virgin Islands'
-//   },
-//   {
-//     flagURL: '../assets/americas/dominican_republic_flag.png',
-//     options: [
-//       'USA', 
-//       'Dominican Republic',
-//       'Cuba', 
-//     ],
-//     correctAnswer: 'Dominican Republic'
-//   },
-//   {
-//     flagURL: '../assets/americas/uruguay_flag.png',
-//     options: [
-//       'Argentina', 
-//       'Uruguay',
-//       'Cuba', 
-//     ],
-//     correctAnswer: 'Uruguay'
-//   },
-//   {
-//     flagURL: '../assets/americas/trinidad_and_tobago_flag.png',
-//     options: [
-//       'Haiti', 
-//       'Trinidad/Tobago',
-//       'Canada', 
-//     ],
-//     correctAnswer: 'Trinidad/Tobago'
-//   },
-//   {
-//     flagURL: '../assets/americas/usa_flag.png',
-//     options: [
-//       'USA', 
-//       'Panama',
-//       'Cuba', 
-//     ],
-//     correctAnswer: 'USA'
-//   },
+  {
+    flagURL: '../assets/americas/brazil_flag.png',
+    options: [
+      'Brazil', 
+      'Cuba',
+      'Jamaica', 
+    ],
+    correctAnswer: 'Brazil'
+  },
+  {
+    flagURL: '../assets/americas/canada_flag.png',
+    options: [
+      'Costa Rica', 
+      'Cameroon',
+      'Canada', 
+    ],
+    correctAnswer: 'Canada'
+  },
+  {
+    flagURL: '../assets/americas/saint_lucia_flag.png',
+    options: [
+      'USA', 
+      'Haiti',
+      'Saint Lucia', 
+    ],
+    correctAnswer: 'Saint Lucia'
+  },
+  {
+    flagURL: '../assets/americas/colombia_flag.png',
+    options: [
+      'Ecuador', 
+      'Columbia',
+      'Canada', 
+    ],
+    correctAnswer: 'Columbia'
+  },
+  {
+    flagURL: '../assets/americas/ecuador_flag.png',
+    options: [
+      'El Salvador', 
+      'Ecuador',
+      'Columbia', 
+    ],
+    correctAnswer: 'Ecuador'
+  },
+  {
+    flagURL: '../assets/americas/honduras_flag.png',
+    options: [
+      'Panama', 
+      'El Salvador',
+      'Honduras', 
+    ],
+    correctAnswer: 'Honduras'
+  },
+  {
+    flagURL: '../assets/americas/argentina_flag.png',
+    options: [
+      'Argentina', 
+      'Cameroon',
+      'Honduras', 
+    ],
+    correctAnswer: 'Argentina'
+  },
+  {
+    flagURL: '../assets/americas/guyana_flag.png',
+    options: [
+      'Aruba', 
+      'Brazil',
+      'Guyana', 
+    ],
+    correctAnswer: 'Guyana'
+  },
+  {
+    flagURL: '../assets/americas/aruba_flag.png',
+    options: [
+      'Aruba', 
+      'Argentina', 
+      'Bahamas',
+    ],
+    correctAnswer: 'Aruba'
+  },
+  {
+    flagURL: '../assets/americas/british_virgin_islands_flag.png',
+    options: [
+      'Dominican Republic', 
+      'British Virgin Islands', 
+      'Panama',
+    ],
+    correctAnswer: 'British Virgin Islands'
+  },
+  {
+    flagURL: '../assets/americas/dominican_republic_flag.png',
+    options: [
+      'USA', 
+      'Dominican Republic',
+      'Cuba', 
+    ],
+    correctAnswer: 'Dominican Republic'
+  },
+  {
+    flagURL: '../assets/americas/uruguay_flag.png',
+    options: [
+      'Argentina', 
+      'Uruguay',
+      'Cuba', 
+    ],
+    correctAnswer: 'Uruguay'
+  },
+  {
+    flagURL: '../assets/americas/trinidad_and_tobago_flag.png',
+    options: [
+      'Haiti', 
+      'Trinidad/Tobago',
+      'Canada', 
+    ],
+    correctAnswer: 'Trinidad/Tobago'
+  },
+  {
+    flagURL: '../assets/americas/usa_flag.png',
+    options: [
+      'USA', 
+      'Panama',
+      'Cuba', 
+    ],
+    correctAnswer: 'USA'
+  },
   {
     flagURL: '../assets/americas/el_salvador_flag.png',
     options: [
@@ -204,15 +204,15 @@ const african = [
     flagURL: '../assets/african/botswana_flag.png',
     options: [
       'Congo', 
-      'Botswana',
       'Tanzania', 
+      'Botswana',
     ],
     correctAnswer: 'Botswana'
   },
   {
     flagURL: '../assets/african/burundi_flag.png',
     options: [
-      'Somali', 
+      'Somalia', 
       'Burundi',
       'Equatorial Guinea', 
     ],
@@ -248,9 +248,9 @@ const african = [
   {
     flagURL: '../assets/african/eritrea_flag.png',
     options: [
+      'Eritrea', 
       'Benin', 
       'Egypt',
-      'Eritrea', 
     ],
     correctAnswer: 'Eritrea'
   },
@@ -294,9 +294,9 @@ const african = [
   {
     flagURL: '../assets/african/nigeria_flag.png',
     options: [
-      'Nigeria', 
       'Rwanda',
       'Algeria', 
+      'Nigeria', 
     ],
     correctAnswer: 'Nigeria'
   },
@@ -415,8 +415,8 @@ const eurasian = [
     flagURL: '../assets/eurasia/germany_flag.png',
     options: [
       'Norway', 
-      'Portugal',
       'Germany', 
+      'Portugal',
     ],
     correctAnswer: 'Germany'
   },
@@ -460,7 +460,7 @@ const eurasian = [
     flagURL: '../assets/eurasia/japan_flag.png',
     options: [
       'Finland', 
-      'Korea',
+      'North Korea',
       'Japan', 
     ],
     correctAnswer: 'Japan'
@@ -478,8 +478,8 @@ const eurasian = [
     flagURL: '../assets/eurasia/norway_flag.png',
     options: [
       'Iceland', 
-      'Greenland',
       'Norway', 
+      'Greenland',
     ],
     correctAnswer:'Norway'
   },
@@ -541,8 +541,8 @@ const eurasian = [
     flagURL: '../assets/eurasia/uae_flag.png',
     options: [
       'United Arab Emirates', 
-      'United Kingdom',
       'Greece', 
+      'United Kingdom',
     ],
     correctAnswer: 'United Arab Emirates'
   },
@@ -585,9 +585,9 @@ const eurasian = [
   {
     flagURL: '../assets/eurasia/switzerland_flag.png',
     options: [
+      'Switzerland', 
       'Poland', 
       'Norway',
-      'Switzerland', 
     ],
     correctAnswer: 'Switzerland'
   },

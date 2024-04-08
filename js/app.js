@@ -1,6 +1,5 @@
-import { americas, african, eurasian } from "../data /continents.js";
-
-import * as shineWaving from "./audio.js"
+import { americas, african, eurasian } from '../data /continents.js';
+import * as shineWaving from './audio.js'
 
 let currentCategory = []
 let currentQuestionIdx = 0
@@ -12,41 +11,31 @@ let flagsLeft = 0
 const theAmericasButton = document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
 const eurasianButton = document.querySelector('#eurasian-button')
-
 const buttonElement1 = document.querySelector('#button1')
 const buttonElement2 = document.querySelector('#button2')
 const buttonElement3 = document.querySelector('#button3')
-
 const imageFlag = document.querySelector('.flag')
-
 const flagModeBtn = document.querySelector('#flag-mode')
 const body = document.querySelector('body')
-
 const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
-
 const messageEl = document.getElementById('message')
 const resetBtnEl = document.getElementById('reset-button')
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
 eurasianButton.addEventListener('click', selectEurasian)
-
 answerOptionsEl.addEventListener('click', selectButtons)
-
 flagModeBtn.addEventListener('click', toggleMode)
-
 resetBtnEl.addEventListener('click', resetQuestions)
 
 function toggleMode(){
-  body.className = body.className === "dark" ? "" : "dark"
-  if (body.className === "dark") {
+  body.className = body.className === 'flag' ? "" : 'flag'
+  if (body.className === 'flag') {
     shineWaving.playWavingFlag()
   } 
 }
-
 init ()
-
 function init () {
   scoreDisplayEl.style.display = 'none'
   buttonElement1.style.display = 'none'
@@ -61,11 +50,8 @@ function init () {
     score = 0
 }
 function resetQuestions(){
-  
-
   init()
 }
-
 function shuffleQuestions(questionArray) {
   let numItemsToShuffle = questionArray.length
   let questionsToShuffle = [...questionArray]
@@ -76,28 +62,24 @@ function shuffleQuestions(questionArray) {
   }
   return shuffledQuestions
 }
-
 function selectTheAmericas (){
   currentCategory = shuffleQuestions([...americas])
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
 }
-
 function selectAfrican (){
   currentCategory = shuffleQuestions([...african])
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
 }
-
 function selectEurasian (){
   currentCategory = shuffleQuestions([...eurasian])
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
 }
-
 function selectButtons(evt){
   let button = evt.target
   if (button.nodeName === 'BUTTON') {
@@ -109,20 +91,16 @@ function selectButtons(evt){
     }, 1000)
   }
 }
-
 function appendFlag (){
   imageFlag.src = currentCategory[currentQuestionIdx].flagURL
   imageFlag.style.height = '400px'
   imageFlag.style.width = '600px'
-
 }
-
 function answerOptions (){ 
   buttonElement1.textContent = currentCategory[currentQuestionIdx].options[0]
   buttonElement2.textContent = currentCategory[currentQuestionIdx].options[1]
   buttonElement3.textContent = currentCategory[currentQuestionIdx].options[2]
 }
-
 function checkCorrectAnswer (button){
   let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
@@ -133,7 +111,6 @@ function checkCorrectAnswer (button){
   }
   trackScore(button)
 }
-
 function revertButtonColors (){
   buttonElement1.classList.remove('red');
   buttonElement1.classList.remove('green');
@@ -142,8 +119,6 @@ function revertButtonColors (){
   buttonElement3.classList.remove('green');
   buttonElement3.classList.remove('red');
 }
-
-
 function trackScore (button){
   scoreDisplayEl.style.display = ''
   let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
@@ -153,24 +128,21 @@ function trackScore (button){
   }
   scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
-
 function feedbackMessage (){
   if(score === 10 ){
-    messageEl.textContent = "That is a decent score. Great job!!" 
+    messageEl.textContent = 'That is a decent score. Great job!!' 
   }else if (score >= 18 ){
-    messageEl.textContent = `Well done!! Your knowledge of this continent is exceptional`
+    messageEl.textContent = 'Well done!! Your knowledge of this continent is exceptional'
   }else if(score <= 10 ){
-    messageEl.textContent = "That's a little low. Maybe spin around the globe from time to time!!"
+    messageEl.textContent = 'That`s a little low. Maybe spin around the globe from time to time!!'
   }
 }
-
 function render () {
   imageFlag.style.display = ''
   resetBtnEl.style.display = ''
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
-
   if(flagsLeft !== 0){
     revertButtonColors()
     answerOptions()
@@ -184,3 +156,15 @@ function render () {
     buttonElement3.style.display = 'none'
   }
 }
+// this below code/function will be used for future additions to this game
+// let timeLeft = 15
+// const countdownEl = document.getElementById ('countdown')
+// function startTimer(){
+//   let timer = setInterval(function() {
+//     countdownEl.textContent = timeLeft + ' seconds remaining.'
+//     timeLeft -= 1
+//     if(timeLeft < 0 ){
+//       countdownEl.textContent = 'You`re our of Time!'
+//     }
+//   }, 2000)
+// }
