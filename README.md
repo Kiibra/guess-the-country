@@ -31,10 +31,10 @@ ___
 *** 
 [] Randomize answer options 
 
-[] implement full functionality to timer function
+[] Implement full functionality to timer
 
-[] update css to better introduce the game at initial visit
+[] Fix flag-mode button to alternate from 'Flag-Mode' to 'Back'
 
-[] Fix flag-mode button to alternate from flag-mode to back
+[] Update and work more on CSS to better introduce the game at initial visit
 
 
