@@ -131,10 +131,10 @@ function trackScore (button){
 function feedbackMessage (){
   if(score === 10 ){
     messageEl.textContent = "That is a decent score. Great job!!" 
-  }else if (score >= 18 ){
+  }else if(score >= 18 ){
     messageEl.textContent = "Well done!! Your knowledge of this continent is exceptional"
   }else if(score < 10 ){
-    messageEl.textContent = "That`s a little low. Maybe spin around the globe sometimes!!"
+    messageEl.textContent = "Yiikes!! That`s a little low. Maybe spin the globe sometime!!"
   }
 }
 function render () {
