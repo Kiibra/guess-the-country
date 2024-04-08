@@ -22,6 +22,7 @@ h1 {
   color: #141313;
   font-size: 18px;
   border-radius: 2px;
+  margin-top: 5px;
 }
 h2 {
   font-family: "Unbounded", sans-serif;
@@ -77,7 +78,7 @@ nav {
   margin-top: 10px;
   display: flex;
   justify-content:flex-end;
-  background-color: #af3232;
+  background-color: #e95d5d;
   color: #ede9e7;
 }
 .flag {
@@ -100,6 +101,7 @@ button {
   padding: 8px 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: 6px 6px 2px 1px rgba(1, 1, 248, 0.2);
 }
 #track-score {
   display: flex;
@@ -114,10 +116,11 @@ button {
   font-style: italic;
 }
 .board-container {
-  background-color: #f7fff68d;
+  background-color: #e9f1e8b4;
   margin-top: 10px;
   width: 860px;
   height: 685px;
   border-radius: 5px;
-  filter: contrast();
+  box-shadow: 5px 4px 5px 7px #CFFCFF;
+  filter: drop-shadow(10px 10px  rgba(24, 189, 239, 0.486));
 }

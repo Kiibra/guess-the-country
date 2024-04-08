@@ -22,12 +22,12 @@ ___
 * ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
 ***
-### `Credits`
+### `Credits 🙌`
 ***
 * Check out all my [Attributions](https://docs.google.com/document/d/1oDASCxQHmfdUwSc_EJesbAEvx6MOadVKc9lukSuPiNE/edit?usp=sharing).
 
 ***
-### `Ice Box `
+### `Ice Box 🧊`
 *** 
 [] Randomize answer options 
 
