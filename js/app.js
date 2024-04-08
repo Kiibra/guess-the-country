@@ -156,3 +156,15 @@ function render () {
     buttonElement3.style.display = 'none'
   }
 }
+// this below code/function will be used for future additions to this game
+// let timeLeft = 15
+// const countdownEl = document.getElementById ('countdown')
+// function startTimer(){
+//   let timer = setInterval(function() {
+//     countdownEl.textContent = timeLeft + ' seconds remaining.'
+//     timeLeft -= 1
+//     if(timeLeft < 0 ){
+//       countdownEl.textContent = 'You`re our of Time!'
+//     }
+//   }, 2000)
+// }
