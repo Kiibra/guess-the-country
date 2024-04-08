@@ -19,8 +19,8 @@ const flagModeBtn = document.querySelector('#flag-mode')
 const body = document.querySelector('body')
 const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
-const messageEl = document.getElementById('message')
 const resetBtnEl = document.getElementById('reset-button')
+const messageEl = document.getElementById('message')
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
@@ -130,11 +130,11 @@ function trackScore (button){
 }
 function feedbackMessage (){
   if(score === 10 ){
-    messageEl.textContent = 'That is a decent score. Great job!!' 
+    messageEl.textContent = "That is a decent score. Great job!!" 
   }else if (score >= 18 ){
-    messageEl.textContent = 'Well done!! Your knowledge of this continent is exceptional'
-  }else if(score <= 10 ){
-    messageEl.textContent = 'That`s a little low. Maybe spin around the globe from time to time!!'
+    messageEl.textContent = "Well done!! Your knowledge of this continent is exceptional"
+  }else if(score < 10 ){
+    messageEl.textContent = "That`s a little low. Maybe spin around the globe sometimes!!"
   }
 }
 function render () {
@@ -143,11 +143,11 @@ function render () {
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
-  if(flagsLeft !== 0){
+  if(flagsLeft !== 0 ){
     revertButtonColors()
     answerOptions()
     appendFlag ()
-  }else if(flagsLeft === 0){
+  }else if(flagsLeft === 0 ){
     feedbackMessage()
     messageEl.style.display = ''
     imageFlag.style.display = 'none'

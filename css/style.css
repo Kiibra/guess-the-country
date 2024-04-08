@@ -85,6 +85,9 @@ nav {
   justify-content: center;
   align-items: center;
 }
+#message {
+  color: #af3232;
+}
 button {
   background-color: rgb(227, 227, 200);
   border: 0px;
@@ -116,4 +119,5 @@ button {
   width: 860px;
   height: 685px;
   border-radius: 5px;
+  filter: contrast();
 }
