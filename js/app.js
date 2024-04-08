@@ -112,8 +112,8 @@ function selectButtons(evt){
 
 function appendFlag (){
   imageFlag.src = currentCategory[currentQuestionIdx].flagURL
-  imageFlag.style.height = '300px'
-  imageFlag.style.width = '500px'
+  imageFlag.style.height = '400px'
+  imageFlag.style.width = '600px'
 
 }
 

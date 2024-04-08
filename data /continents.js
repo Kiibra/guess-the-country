@@ -385,7 +385,7 @@ const eurasian = [
     correctAnswer: 'Iceland'
   },
   {
-    flagURL: '../assets/eurasia/india_flag.jpeg',
+    flagURL: '../assets/eurasia/india_flag.png',
     options: [
       'Italy', 
       'Ireland',
@@ -394,7 +394,7 @@ const eurasian = [
     correctAnswer: 'India'
   },
   {
-    flagURL: '../assets/eurasia/ireland_flag.jpg',
+    flagURL: '../assets/eurasia/ireland_flag.png',
     options: [
       'Ireland', 
       'Ivory Coast',
@@ -403,7 +403,7 @@ const eurasian = [
     correctAnswer: 'Ireland'
   },
   {
-    flagURL: '../assets/eurasia/italy_flag.jpg',
+    flagURL: '../assets/eurasia/italy_flag.png',
     options: [
       'Palestine', 
       'India',
@@ -412,7 +412,7 @@ const eurasian = [
     correctAnswer: 'Italy'
   },
   {
-    flagURL: '../assets/eurasia/germany_flag.jpg',
+    flagURL: '../assets/eurasia/germany_flag.png',
     options: [
       'Norway', 
       'Portugal',
@@ -421,7 +421,7 @@ const eurasian = [
     correctAnswer: 'Germany'
   },
   {
-    flagURL: '../assets/eurasia/france_flag.jpg',
+    flagURL: '../assets/eurasia/france_flag.png',
     options: [
       'Malta', 
       'France',
@@ -430,7 +430,7 @@ const eurasian = [
     correctAnswer: 'France'
   },
   {
-    flagURL: '../assets/eurasia/cyprus_flag.jpg',
+    flagURL: '../assets/eurasia/cyprus_flag.png',
     options: [
       'Hungary', 
       'Japan',
@@ -439,7 +439,7 @@ const eurasian = [
     correctAnswer: 'Cyprus'
   },
   {
-    flagURL: '../assets/eurasia/china_flag.jpeg',
+    flagURL: '../assets/eurasia/china_flag.png',
     options: [
       'Turkey', 
       'China',
@@ -448,7 +448,7 @@ const eurasian = [
     correctAnswer: 'China'
   },
   {
-    flagURL: '/assets/eurasia/belgium_flag.jpg',
+    flagURL: '/assets/eurasia/belgium_flag.png',
     options: [
       'Germany', 
       'Belgium',
@@ -466,7 +466,7 @@ const eurasian = [
     correctAnswer: 'Japan'
   },
   {
-    flagURL: '../assets/eurasia/korea_south_flag.png',
+    flagURL: '../assets/eurasia/south_korea_flag.png',
     options: [
       'South Korea', 
       'Finland',
