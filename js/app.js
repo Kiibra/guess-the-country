@@ -129,10 +129,10 @@ function trackScore (button){
   scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 function feedbackMessage (){
-  if(score = 10 ){
+  if(score >= 10 && score <= 17){
     messageEl.textContent = "That is a decent score. Great job!!" 
   }else if(score >= 18 ){
-    messageEl.textContent = "Well done!! Your knowledge of this continent is exceptional"
+    messageEl.textContent = "Well done!! Your knowledge of this continent`s flags is exceptional!!"
   }else if(score < 10 ){
     messageEl.textContent = "Yiikes!! That`s a little low. Maybe spin the globe sometime!!"
   }
