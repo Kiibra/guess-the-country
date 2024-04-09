@@ -4,8 +4,6 @@ import * as shineWaving from './audio.js'
 let currentCategory = []
 let currentQuestionIdx = 0
 let score = 0
-let correctAnswer = ''
-let options = []
 let flagsLeft = 0
 
 const theAmericasButton = document.querySelector('#americas-button')
@@ -44,10 +42,8 @@ function init () {
   resetBtnEl.style.display = 'none'
   messageEl.style.display='none'
   imageFlag.style.display = 'none'
-    options = ''
-    correctAnswer = ''
-    currentQuestionIdx = 0
-    score = 0
+  currentQuestionIdx = 0
+  score = 0
 }
 function resetQuestions(){
   init()
