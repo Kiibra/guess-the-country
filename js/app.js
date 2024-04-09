@@ -1,4 +1,4 @@
-import { americas, african, eurasian } from '../data /continents.js';
+import { americas, african, eurasian } from '../data /continents.js'
 import * as shineWaving from './audio.js'
 
 let currentCategory = []
@@ -108,19 +108,19 @@ function checkCorrectAnswer (button){
   trackScore(button)
 }
 function revertButtonColors (){
-  buttonElement1.classList.remove('red');
-  buttonElement1.classList.remove('green');
-  buttonElement2.classList.remove('green');
-  buttonElement2.classList.remove('red');
-  buttonElement3.classList.remove('green');
-  buttonElement3.classList.remove('red');
+  buttonElement1.classList.remove('red')
+  buttonElement1.classList.remove('green')
+  buttonElement2.classList.remove('green')
+  buttonElement2.classList.remove('red')
+  buttonElement3.classList.remove('green')
+  buttonElement3.classList.remove('red')
 }
 function trackScore (button){
   scoreDisplayEl.style.display = ''
   let correctAnswer = currentCategory[currentQuestionIdx].correctAnswer
   let answerChoice = button.textContent
   if (answerChoice === correctAnswer ){
-    score +=  1;
+    score +=  1
   }
   scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
