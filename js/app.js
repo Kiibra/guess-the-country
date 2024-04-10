@@ -5,6 +5,8 @@ let currentCategory = []
 let currentQuestionIdx = 0
 let score = 0
 let flagsLeft = 0
+let timeLeft = 15
+let timer
 
 const theAmericasButton = document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
@@ -19,6 +21,7 @@ const answerOptionsEl = document.querySelector('.answer-options')
 const scoreDisplayEl = document.getElementById('score-display')
 const resetBtnEl = document.getElementById('reset-button')
 const messageEl = document.getElementById('message')
+const countdownEl = document.getElementById ('countdown')
 
 theAmericasButton.addEventListener('click', selectTheAmericas)
 africanButton.addEventListener('click', selectAfrican) 
@@ -48,6 +51,21 @@ function init () {
 function resetQuestions(){
   init()
 }
+
+function startTimer(){
+  timer = setInterval(function() {
+    countdownEl.textContent = timeLeft + ' seconds remaining.'
+    timeLeft -= 1
+    if(timeLeft < 0 ){
+      console.log('time up')
+      clearInterval(timer)
+      countdownEl.textContent = 'You`re out of Time!'
+      messageEl.style.display = ''
+      setTimeout(feedbackMessage, 1000)
+    }
+  }, 1000)
+}
+
 function shuffleQuestions(questionArray) {
   let numItemsToShuffle = questionArray.length
   let questionsToShuffle = [...questionArray]
@@ -63,18 +81,21 @@ function selectTheAmericas (){
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
+  startTimer()
 }
 function selectAfrican (){
   currentCategory = shuffleQuestions([...african])
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
+  startTimer()
 }
 function selectEurasian (){
   currentCategory = shuffleQuestions([...eurasian])
   currentQuestionIdx = 0
   flagsLeft = currentCategory.length
   render()
+  startTimer()
 }
 function selectButtons(evt){
   let button = evt.target
@@ -125,6 +146,7 @@ function trackScore (button){
   scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 function feedbackMessage (){
+  console.log('feedbackMessage')
   if(score >= 10 && score <= 17){
     messageEl.textContent = "That is a decent score. Great job!!" 
   }else if(score >= 18 ){
@@ -152,15 +174,3 @@ function render () {
     buttonElement3.style.display = 'none'
   }
 }
-// this below code/function will be used for future additions to this game
-// let timeLeft = 15
-// const countdownEl = document.getElementById ('countdown')
-// function startTimer(){
-//   let timer = setInterval(function() {
-//     countdownEl.textContent = timeLeft + ' seconds remaining.'
-//     timeLeft -= 1
-//     if(timeLeft < 0 ){
-//       countdownEl.textContent = 'You`re our of Time!'
-//     }
-//   }, 2000)
-// }
