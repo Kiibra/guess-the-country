@@ -5,8 +5,9 @@ let currentCategory = []
 let currentQuestionIdx = 0
 let score = 0
 let flagsLeft = 0
-let timeLeft = 15
+let timeLeft = 25
 let timer
+let gameOver
 
 const theAmericasButton = document.querySelector('#americas-button')
 const africanButton = document.querySelector('#african-button')
@@ -45,11 +46,14 @@ function init () {
   resetBtnEl.style.display = 'none'
   messageEl.style.display='none'
   imageFlag.style.display = 'none'
+  countdownEl.style.display = 'none'
   currentQuestionIdx = 0
   score = 0
+  gameOver =false
 }
 function resetQuestions(){
   init()
+  gameState()
 }
 
 function startTimer(){
@@ -57,13 +61,23 @@ function startTimer(){
     countdownEl.textContent = timeLeft + ' seconds remaining.'
     timeLeft -= 1
     if(timeLeft < 0 ){
-      console.log('time up')
       clearInterval(timer)
       countdownEl.textContent = 'You`re out of Time!'
       messageEl.style.display = ''
       setTimeout(feedbackMessage, 1000)
     }
   }, 1000)
+}
+
+function gameState(){
+  if(timeLeft === 0) {
+    gameOver = true
+    messageEl.style.display = ''
+    // countdownEl.style.display = ''
+    buttonElement1.style.display = 'none'
+    buttonElement2.style.display = 'none'
+    buttonElement3.style.display = 'none'
+  }
 }
 
 function shuffleQuestions(questionArray) {
@@ -146,13 +160,12 @@ function trackScore (button){
   scoreDisplayEl.innerHTML = ` Score: ${score}/${currentCategory.length} ` 
 }
 function feedbackMessage (){
-  console.log('feedbackMessage')
   if(score >= 10 && score <= 17){
-    messageEl.textContent = "That is a decent score. Great job!!" 
+    messageEl.textContent = "That`s a decent score. Great job!!" 
   }else if(score >= 18 ){
     messageEl.textContent = "Well done!! Your knowledge of this continent`s flags is exceptional!!"
   }else if(score < 10 ){
-    messageEl.textContent = "Yiikes!! That`s a little low. Maybe spin the globe sometime!!"
+    messageEl.textContent = "Yiikes!! That`s a little low. Try Again?"
   }
 }
 function render () {
@@ -161,11 +174,13 @@ function render () {
   buttonElement1.style.display = ''
   buttonElement2.style.display = ''
   buttonElement3.style.display = ''
+  countdownEl.style.display = ''
+  gameState()
   if(flagsLeft !== 0 ){
     revertButtonColors()
     answerOptions()
     appendFlag ()
-  }else if(flagsLeft === 0 ){
+  }else if(flagsLeft === 0){
     feedbackMessage()
     messageEl.style.display = ''
     imageFlag.style.display = 'none'

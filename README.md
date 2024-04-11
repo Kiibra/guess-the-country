@@ -36,7 +36,7 @@ ___
 *** 
 [] Randomize answer options 
 
-[] Implement full functionality to timer
+[X] Implement full functionality to timer
 
 [] Fix flag-mode button to alternate from 'Flag-Mode' to 'Back'
 
