@@ -46,9 +46,11 @@ function init () {
   resetBtnEl.style.display = 'none'
   messageEl.style.display='none'
   imageFlag.style.display = 'none'
+  countdownEl.style.display = 'none'
   currentQuestionIdx = 0
   score = 0
   gameOver =false
+  timeLeft = 25
 }
 function resetQuestions(){
   clearInterval(timer)
@@ -73,6 +75,7 @@ function gameState(){
   if(timeLeft === 0) {
     gameOver = true
     messageEl.style.display = ''
+    // countdownEl.style.display = ''
     buttonElement1.style.display = 'none'
     buttonElement2.style.display = 'none'
     buttonElement3.style.display = 'none'
