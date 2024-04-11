@@ -46,14 +46,14 @@ function init () {
   resetBtnEl.style.display = 'none'
   messageEl.style.display='none'
   imageFlag.style.display = 'none'
-  countdownEl.style.display = 'none'
   currentQuestionIdx = 0
   score = 0
   gameOver =false
 }
 function resetQuestions(){
-  init()
+  clearInterval(timer)
   gameState()
+  init()
 }
 
 function startTimer(){
@@ -73,7 +73,6 @@ function gameState(){
   if(timeLeft === 0) {
     gameOver = true
     messageEl.style.display = ''
-    // countdownEl.style.display = ''
     buttonElement1.style.display = 'none'
     buttonElement2.style.display = 'none'
     buttonElement3.style.display = 'none'
@@ -165,7 +164,7 @@ function feedbackMessage (){
   }else if(score >= 18 ){
     messageEl.textContent = "Well done!! Your knowledge of this continent`s flags is exceptional!!"
   }else if(score < 10 ){
-    messageEl.textContent = "Yiikes!! That`s a little low. Try Again?"
+    messageEl.textContent = "Yiikes!! That score is a little low. Try Again!"
   }
 }
 function render () {
