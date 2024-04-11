@@ -75,7 +75,6 @@ function gameState(){
   if(timeLeft === 0) {
     gameOver = true
     messageEl.style.display = ''
-    // countdownEl.style.display = ''
     buttonElement1.style.display = 'none'
     buttonElement2.style.display = 'none'
     buttonElement3.style.display = 'none'

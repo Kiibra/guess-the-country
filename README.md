@@ -34,12 +34,12 @@ ___
 ***
 ### `Ice Box🧊`
 *** 
-[] Randomize answer options 
+- [] Randomize answer options 
 
-[X] Implement full functionality to timer
+- [x] Implement full functionality to timer
 
-[] Fix flag-mode button to alternate from 'Flag-Mode' to 'Back'
+- [] Fix flag-mode button to alternate from 'Flag-Mode' to 'Back'
 
-[] Update and work more on CSS to better introduce the game at initial visit
+- [] Update and work more on CSS to better introduce the game at initial visit
 
 
